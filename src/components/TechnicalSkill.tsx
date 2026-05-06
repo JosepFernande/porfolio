@@ -1,26 +1,16 @@
 import { TECHNICAL_SKILLS } from "@/const/technical-skills.data";
+import SectionHeader from "./SectionHeader";
 
 export default function TechnicalSkill() {
     return (
-        <div className="max-w-300 mx-auto w-full flex flex-col gap-12">
-            {/* Header */}
-            <div className="flex flex-col gap-4 text-left">
-                <div className="flex items-center gap-2">
-                    <span className="h-px w-8 bg-primary"></span>
-                    <span className="text-primary font-bold uppercase tracking-wider text-xs">
-                        Expertise
-                    </span>
-                </div>
-
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
-                    Habilidades{" "}
-                    <span className="text-slate-400 dark:text-slate-500">Técnicas</span>
-                </h2>
-
-                <p className="text-slate-600 dark:text-slate-400 max-w-2xl text-lg">
-                    Un conjunto de tecnologías modernas enfocadas en el rendimiento y la escalabilidad.
-                </p>
-            </div>
+        <section aria-labelledby="habilidades-title" className="max-w-300 mx-auto w-full flex flex-col gap-12 animate-fade-in-up">
+            <SectionHeader
+                tag="Expertise"
+                title="Habilidades"
+                accent="Técnicas"
+                description="Un conjunto de tecnologías modernas enfocadas en el rendimiento y la escalabilidad."
+                titleId="habilidades-title"
+            />
 
             {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -31,11 +21,11 @@ export default function TechnicalSkill() {
                     return (
                         <div
                             key={skill.title}
-                            className="group relative flex flex-col gap-6 p-6 rounded-2xl bg-card-light dark:bg-card-dark
-              border border-gray-200 dark:border-[#2d4625]
+                            className="group relative flex flex-col gap-6 p-6 rounded-xl bg-card-light dark:bg-card-dark
+              border border-gray-200 dark:border-slate-700/50
               hover:border-primary/50 dark:hover:border-primary/50
-              hover:shadow-[0_0_25px_rgba(37,99,235,0.25)]
-              dark:hover:shadow-[0_0_20px_rgba(37,99,235,0.1)]
+              hover:shadow-[0_0_25px_rgba(16,185,129,0.22)]
+              dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.12)]
               transition-all duration-300 hover:-translate-y-1"
                         >
                             {/* Icono decorativo */}
@@ -44,9 +34,9 @@ export default function TechnicalSkill() {
                             </div>
 
                             {/* Icono principal */}
-                            <div className="size-12 rounded-xl bg-background-light dark:bg-[#2a3f24]
+                            <div className="size-12 rounded-xl bg-background-light dark:bg-slate-800/50
                 flex items-center justify-center text-primary
-                border border-gray-100 dark:border-[#354f2f]
+                border border-gray-100 dark:border-slate-700/50
                 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
                             >
                                 <Icon className="text-[28px]!" />
@@ -63,12 +53,12 @@ export default function TechnicalSkill() {
                             </div>
 
                             {/* Tags */}
-                            <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100 dark:border-[#2d4625]">
+                            <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100 dark:border-slate-700/50">
                                 {skill.tags.map((tag) =>
                                     tag.highlight ? (
                                         <span
                                             key={tag.label}
-                                            className="px-3 py-1 rounded-full text-xs font-semibold
+                                            className="px-3 py-1 rounded-lg text-xs font-semibold
                       bg-primary/10 text-primary border border-primary/20
                       flex items-center gap-1"
                                         >
@@ -82,10 +72,10 @@ export default function TechnicalSkill() {
                                     ) : (
                                         <span
                                             key={tag.label}
-                                            className="px-3 py-1 rounded-full text-xs font-medium
-                      bg-gray-100 dark:bg-[#253820]
+                                            className="px-3 py-1 rounded-lg text-xs font-medium
+                      bg-gray-100 dark:bg-slate-800/50
                       text-slate-600 dark:text-slate-300
-                      border border-gray-200 dark:border-[#354f2f]"
+                      border border-gray-200 dark:border-slate-700/50"
                                         >
                                             {tag.label}
                                         </span>
@@ -96,6 +86,6 @@ export default function TechnicalSkill() {
                     );
                 })}
             </div>
-        </div>
+        </section>
     );
 }

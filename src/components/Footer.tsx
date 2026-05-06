@@ -1,6 +1,7 @@
 
-import { ArrowUpward, DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
+import { ArrowUpward } from "@mui/icons-material";
 import { GitHubDark, Gmail, LinkedIn } from "developer-icons";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Footer() {
     return (
@@ -10,50 +11,43 @@ export default function Footer() {
                     <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
                         <div className="flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                            <h2 className="text-gray-900 dark:text-white text-xl font-bold tracking-tight">Alex Developer</h2>
+                            <h2 className="text-gray-900 dark:text-white text-xl font-bold tracking-tight">Josep Fernández Ortega</h2>
                         </div>
-                        <p className="text-gray-600 dark:text-[#a0c695] text-sm font-medium">Full Stack Developer<br /><span className="opacity-70 font-normal">Building scalable web solutions.</span></p>
+                        <p className="text-gray-600 dark:text-slate-400 text-sm font-medium">Full Stack Developer<br /><span className="opacity-70 font-normal">Construyendo soluciones web escalables.</span></p>
                     </div>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <a className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-[#1f2e1a] hover:bg-white dark:hover:bg-[#2d4625] transition-all duration-300 border border-transparent hover:border-primary/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]" href="#">
+                        <a aria-label="GitHub" className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-700/60 transition-all duration-300 border border-transparent hover:border-primary/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark" href="https://github.com/JosepFernande" target="_blank" rel="noopener noreferrer">
                             <GitHubDark size={24} />
 
                             <span className="absolute -top-8 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">GitHub</span>
                         </a>
-                        <a className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-[#1f2e1a] hover:bg-white dark:hover:bg-[#2d4625] transition-all duration-300 border border-transparent hover:border-primary/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]" href="#">
+                        <a aria-label="LinkedIn" className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-700/60 transition-all duration-300 border border-transparent hover:border-primary/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark" href="https://www.linkedin.com/in/josep-fern%C3%A1ndez-a84174247/" target="_blank" rel="noopener noreferrer">
                             <LinkedIn size={24} />
                             <span className="absolute -top-8 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">LinkedIn</span>
                         </a>
 
-                        <a className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-[#1f2e1a] hover:bg-white dark:hover:bg-[#2d4625] transition-all duration-300 border border-transparent hover:border-primary/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]" href="#">
+                        <a aria-label="Email" className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-700/60 transition-all duration-300 border border-transparent hover:border-primary/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark" href="mailto:fernandezjos98@gmail.com">
                             <Gmail size={24} />
                             <span className="absolute -top-8 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Email</span>
                         </a>
                     </div>
                     <div className="flex flex-col gap-4 items-center md:items-end">
-                        <div className="flex items-center gap-3 bg-gray-100 dark:bg-[#1f2e1a] px-4 py-2 rounded-lg border border-transparent dark:border-[#406336]">
-                            <LightModeOutlined />
-                            <label className="relative flex h-6 w-11 cursor-pointer items-center rounded-full border-none bg-gray-300 dark:bg-[#2d4625] p-1 transition-colors has-checked:justify-end has-checked:bg-primary">
-                                <div className="h-4.5 w-4.5 rounded-full bg-white shadow-sm"></div>
-                                <input className="invisible absolute" type="checkbox" />
-                            </label>
-                            <DarkModeOutlined />
-                        </div>
-                        <button className="flex cursor-pointer items-center justify-center gap-2 rounded-lg px-4 py-2 bg-transparent hover:bg-gray-100 dark:hover:bg-[#1f2e1a] text-gray-700 dark:text-white text-sm font-bold transition-colors group" >
+                        <ThemeToggle variant="switch" />
+                        <a href="#inicio" className="flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2 bg-transparent hover:bg-gray-100 dark:hover:bg-slate-800/60 text-gray-700 dark:text-white text-sm font-bold transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark" >
                             <div className="group-hover:-translate-y-1 transition-transform duration-300">
                                 <ArrowUpward />
                             </div>
                             <span className="truncate">Scroll to Top</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
-                <div className="border-t border-gray-200 dark:border-[#2d4625] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-500 dark:text-[#a0c695]/60 text-xs font-normal">
-                        © 2024 Alex Developer. All rights reserved.
+                <div className="border-t border-gray-200 dark:border-slate-700/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-gray-500 dark:text-slate-400 text-xs font-normal">
+                        © 2026 Josep Fernández Ortega. Todos los derechos reservados.
                     </p>
-                    <div className="flex gap-6">
-                        <a className="text-xs text-gray-500 dark:text-[#a0c695]/60 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a>
-                        <a className="text-xs text-gray-500 dark:text-[#a0c695]/60 hover:text-primary dark:hover:text-primary transition-colors" href="#">Terms of Service</a>
+                    <div className="flex gap-6" aria-label="Enlaces legales">
+                        <a className="text-xs text-gray-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="/politica-de-privacidad">Política de Privacidad</a>
+                        <a className="text-xs text-gray-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="/terminos-de-servicio">Términos de Servicio</a>
                     </div>
                 </div>
             </div>

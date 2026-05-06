@@ -1,51 +1,98 @@
 @import "tailwindcss";
 
+/* Tailwind v4: habilitar dark mode por clase `.dark` */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Configuración Tailwind v4 */
 @theme {
-  --color-primary: #2563eb;
-  --color-background-light: #f8fafc;
-  --color-background-dark: #0f172a;
+  /* Minimal Premium — Graphite + Emerald */
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-background-light: #f4f7f6;
+  --color-background-dark: #0f1115;
   --color-surface-light: #ffffff;
-  --color-surface-dark: #1e293b;
+  --color-surface-dark: #171b22;
+  --color-card-light: #ffffff;
+  --color-card-dark: #1b2029;
+  --color-text-secondary-dark: #a8b0bc;
+  --color-suborder-surface-dark: #242b36;
 
   --font-display: "Manrope", sans-serif;
 
-  --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.3);
-}
+  --shadow-glow: 0 0 24px rgba(16, 185, 129, 0.28);
 
-/* Animaciones */
-@keyframes float {
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out both;
+  --animate-fade-in-up: fade-in-up 0.8s ease-out both;
+  --animate-bounce-short: bounce-short 0.9s ease-out;
+  --animate-shimmer: shimmer 1.5s linear infinite;
 
-  0%,
-  100% {
-    transform: translateY(0);
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
-  50% {
-    transform: translateY(-10px);
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  @keyframes bounce-short {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    40% {
+      transform: translateY(-8px);
+    }
+
+    70% {
+      transform: translateY(2px);
+    }
   }
-}
 
-@utility animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-@utility animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
+  @keyframes shimmer {
+    100% {
+      transform: translateX(200%);
+    }
+  }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

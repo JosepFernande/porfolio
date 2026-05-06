@@ -1,6 +1,7 @@
 'use client'
 import { ArrowOutwardOutlined, CodeOutlined, DesktopWindowsOutlined, StarOutline, VisibilityOutlined, AddOutlined, ShareOutlined, CheckCircleOutline, FolderOpenOutlined, CloseOutlined } from '@mui/icons-material';
 import { useState } from 'react';
+import SectionHeader from './SectionHeader';
 
 // Datos de proyectos
 const projectsData = {
@@ -60,25 +61,22 @@ const projectsData = {
 
 // Componente para el header de la página
 const PageHeader = () => (
-    <div className="flex flex-col gap-2 border-b border-gray-200 dark:border-surface-dark pb-6">
-        <div className="flex items-center gap-2 text-primary mb-1">
-            <CodeOutlined fontSize="small" />
-            <span className="text-xs font-bold uppercase tracking-widest">Portfolio</span>
-        </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
-            Mis <span className="text-primary decoration-wavy underline decoration-primary/30">Proyectos</span>
-        </h1>
-        <p className="text-neutral-600 dark:text-text-secondary-dark max-w-2xl text-base md:text-lg">
-            Una colección de aplicaciones web, herramientas y experimentos diseñados con enfoque en rendimiento y experiencia de usuario.
-        </p>
+    <div className="border-b border-gray-200 dark:border-surface-dark pb-7">
+        <SectionHeader
+            tag="Portfolio"
+            title="Mis"
+            accent="Proyectos"
+            description="Una colección de aplicaciones web, herramientas y experimentos diseñados con enfoque en rendimiento y experiencia de usuario."
+            titleId="proyectos-title"
+        />
     </div>
 );
 
 // Componente para tags de tecnologías
 const TechTag = ({ children, variant = "regular" }) => {
     const styles = {
-        regular: "text-[10px] font-bold uppercase tracking-wider text-blue-500 dark:text-blue-400",
-        badge: "px-3 py-1 rounded-md bg-blue-50 dark:bg-background-dark text-blue-800 dark:text-blue-200 text-xs font-medium border border-blue-100 dark:border-blue-900/30"
+        regular: "text-[10px] font-bold uppercase tracking-wider text-primary",
+        badge: "px-3 py-1 rounded-md bg-primary/10 dark:bg-primary/15 text-primary text-xs font-medium border border-primary/20"
     };
 
     return <span className={styles[variant]}>{children}</span>;
@@ -88,7 +86,7 @@ const TechTag = ({ children, variant = "regular" }) => {
 const FeaturedProject = ({ project }) => (
     <section className="w-full">
         <h3 className="sr-only">Proyecto Destacado</h3>
-        <div className="group relative overflow-hidden rounded-2xl bg-card-light dark:bg-card-dark border border-gray-200 dark:border-surface-dark shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-2xl bg-card-light dark:bg-card-dark border border-gray-200 dark:border-surface-dark shadow-lg hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all duration-300 hover:-translate-y-0.5">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                 <div className="lg:col-span-7 relative h-64 lg:h-auto overflow-hidden bg-neutral-100 dark:bg-background-dark">
                     <div
@@ -121,11 +119,11 @@ const FeaturedProject = ({ project }) => (
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 mt-2">
-                        <button className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow-[0_4px_14px_0_rgba(59,130,246,0.39)]">
+                        <button className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-bold py-2.5 px-6 rounded-xl transition-colors shadow-[0_4px_14px_0_rgba(16,185,129,0.35)]">
                             <DesktopWindowsOutlined className='text-[20px]!' />
                             Ver Demo
                         </button>
-                        <button className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-transparent border border-neutral-300 dark:border-[#334155] text-neutral-700 dark:text-white hover:bg-blue-50 dark:hover:bg-suborder-surface-dark hover:border-primary/50 hover:text-primary font-medium py-2.5 px-6 rounded-lg transition-colors">
+                        <button className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-transparent border border-neutral-300 dark:border-[#334155] text-neutral-700 dark:text-white hover:bg-primary/10 dark:hover:bg-suborder-surface-dark hover:border-primary/50 hover:text-primary font-medium py-2.5 px-6 rounded-xl transition-colors">
                             <CodeOutlined className='text-[20px]!' />
                             Ver Código
                         </button>
@@ -139,7 +137,7 @@ const FeaturedProject = ({ project }) => (
 // Componente para las tarjetas de proyectos regulares
 const ProjectCard = ({ project, onClick }) => (
     <article
-        className="group relative flex flex-col rounded-xl overflow-hidden bg-card-light dark:bg-card-dark border border-gray-200 dark:border-surface-dark shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/50 transition-all duration-300 cursor-pointer"
+        className="group relative flex flex-col rounded-xl overflow-hidden bg-card-light dark:bg-card-dark border border-gray-200 dark:border-surface-dark shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/50 transition-all duration-300 cursor-pointer hover:-translate-y-1"
         onClick={() => onClick(project)}
     >
         <div className="relative h-56 overflow-hidden">
@@ -149,8 +147,8 @@ const ProjectCard = ({ project, onClick }) => (
                 role="img"
                 aria-label={project.imageAlt}
             />
-            <div className="absolute inset-0 bg-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 backdrop-blur-[2px] p-4">
-                <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75 flex gap-3">
+            <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 backdrop-blur-[2px] p-4">
+                <div className="translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75 flex gap-3">
                     <button
                         className="bg-white text-primary p-3 rounded-full hover:scale-110 transition-transform shadow-lg"
                         title="Ver Demo"
@@ -166,7 +164,7 @@ const ProjectCard = ({ project, onClick }) => (
                         <CodeOutlined className='block' />
                     </button>
                 </div>
-                <span className="text-white text-sm font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100 drop-shadow-md">
+                <span className="text-white text-sm font-bold translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-100 drop-shadow-md">
                     Click para detalles
                 </span>
             </div>
@@ -331,7 +329,7 @@ export default function MyProyect() {
 
     return (
         <>
-            <main className="flex-1 flex flex-col items-center">
+            <section aria-labelledby="proyectos-title" className="flex-1 flex flex-col items-center">
                 <div className="w-full max-w-7xl flex flex-col gap-10">
                     <PageHeader />
                     <FeaturedProject project={projectsData.featured} />
@@ -347,7 +345,7 @@ export default function MyProyect() {
                         <MoreProjectsCard />
                     </div>
                 </div>
-            </main>
+            </section>
 
             <ProjectModal
                 project={selectedProject}

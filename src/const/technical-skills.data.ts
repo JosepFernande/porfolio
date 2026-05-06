@@ -31,10 +31,12 @@ export const TECHNICAL_SKILLS: TechnicalSkillItem[] = [
         icon: CodeOutlined,
         bgIcon: TerminalOutlined,
         tags: [
-            { label: "Angular", level: "Junior", highlight: true },
-            { label: "HTML/CSS" },
-            { label: "UI Interactiva" },
-            { label: "Animaciones" },
+            { label: "Angular", level: "Avanzado", highlight: true },
+            { label: "Signals" },
+            { label: "OnPush" },
+            { label: "Lazy Loading" },
+            { label: "Razor" },
+            { label: "JavaScript / TypeScript" },
         ],
     },
     {
@@ -44,9 +46,11 @@ export const TECHNICAL_SKILLS: TechnicalSkillItem[] = [
         icon: SettingsEthernetOutlined,
         bgIcon: Dns,
         tags: [
+            { label: "NestJS", highlight: true },
+            { label: "Laravel" },
             { label: "APIs REST" },
-            { label: "Lógica de Negocio" },
-            { label: "Autenticación y roles" },
+            { label: "JWT + Guards" },
+            { label: "Arquitectura modular" },
         ],
     },
     {
@@ -57,7 +61,10 @@ export const TECHNICAL_SKILLS: TechnicalSkillItem[] = [
         bgIcon: StorageOutlined,
         tags: [
             { label: "MySQL" },
-            { label: "Modelado Relacional" },
+            { label: "PostgreSQL" },
+            { label: "SQL Server" },
+            { label: "Prisma ORM" },
+            { label: "Eloquent ORM" },
         ],
     },
     {
@@ -69,6 +76,8 @@ export const TECHNICAL_SKILLS: TechnicalSkillItem[] = [
         tags: [
             { label: "Git" },
             { label: "GitHub" },
+            { label: "Microsoft DevOps", highlight: true },
+            { label: "Scrum / Kanban" },
         ],
     },
 ];
