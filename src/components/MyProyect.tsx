@@ -1,10 +1,28 @@
 'use client'
 import { ArrowOutwardOutlined, CodeOutlined, DesktopWindowsOutlined, StarOutline, VisibilityOutlined, AddOutlined, ShareOutlined, CheckCircleOutline, FolderOpenOutlined, CloseOutlined } from '@mui/icons-material';
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import SectionHeader from './SectionHeader';
 
+type TechTagVariant = 'regular' | 'badge';
+
+interface Project {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+    tags: string[];
+    demoUrl?: string;
+    codeUrl?: string;
+}
+
+interface ProjectsData {
+    featured: Project;
+    regular: Project[];
+}
+
 // Datos de proyectos
-const projectsData = {
+const projectsData: ProjectsData = {
     featured: {
         id: 1,
         title: "E-Commerce Dashboard",
@@ -73,8 +91,8 @@ const PageHeader = () => (
 );
 
 // Componente para tags de tecnologías
-const TechTag = ({ children, variant = "regular" }) => {
-    const styles = {
+const TechTag = ({ children, variant = "regular" }: { children: ReactNode; variant?: TechTagVariant }) => {
+    const styles: Record<TechTagVariant, string> = {
         regular: "text-[10px] font-bold uppercase tracking-wider text-primary",
         badge: "px-3 py-1 rounded-md bg-primary/10 dark:bg-primary/15 text-primary text-xs font-medium border border-primary/20"
     };
@@ -83,7 +101,7 @@ const TechTag = ({ children, variant = "regular" }) => {
 };
 
 // Componente para el proyecto destacado
-const FeaturedProject = ({ project }) => (
+const FeaturedProject = ({ project }: { project: Project }) => (
     <section className="w-full">
         <h3 className="sr-only">Proyecto Destacado</h3>
         <div className="group relative overflow-hidden rounded-2xl bg-card-light dark:bg-card-dark border border-gray-200 dark:border-surface-dark shadow-lg hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all duration-300 hover:-translate-y-0.5">
@@ -135,7 +153,7 @@ const FeaturedProject = ({ project }) => (
 );
 
 // Componente para las tarjetas de proyectos regulares
-const ProjectCard = ({ project, onClick }) => (
+const ProjectCard = ({ project, onClick }: { project: Project; onClick: (project: Project) => void }) => (
     <article
         className="group relative flex flex-col rounded-xl overflow-hidden bg-card-light dark:bg-card-dark border border-gray-200 dark:border-surface-dark shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:border-primary/50 transition-all duration-300 cursor-pointer hover:-translate-y-1"
         onClick={() => onClick(project)}
@@ -212,7 +230,7 @@ const MoreProjectsCard = () => (
 );
 
 // Componente Modal para detalles del proyecto
-const ProjectModal = ({ project, isOpen, onClose }) => {
+const ProjectModal = ({ project, isOpen, onClose }: { project: Project | null; isOpen: boolean; onClose: () => void }) => {
     if (!isOpen || !project) return null;
 
     return (
@@ -314,10 +332,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
 // Componente principal
 export default function MyProyect() {
-    const [selectedProject, setSelectedProject] = useState(null);
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleProjectClick = (project) => {
+    const handleProjectClick = (project: Project) => {
         setSelectedProject(project);
         setIsModalOpen(true);
     };
