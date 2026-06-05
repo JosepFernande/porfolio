@@ -10,6 +10,7 @@ import {
   NodeJs,
   React,
 } from "developer-icons";
+import Link from "next/link";
 
 export default function AboutMe() {
   const habilities = [
@@ -50,7 +51,7 @@ export default function AboutMe() {
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
               data-alt="Professional headshot of a developer smiling against a blurred background"
               style={{
-                backgroundImage: "url('me.png')",
+                backgroundImage: "url('me.webp')",
               }}
             ></div>
           </div>
@@ -125,7 +126,7 @@ export default function AboutMe() {
         <div className="flex flex-wrap gap-3">
           {habilities.map(({ htitle, HIcon }, i) => (
             <div
-              key={i}
+              key={`${htitle}-${i}`}
               className="px-4 py-2 rounded-full bg-white border border-gray-200 dark:bg-surface-dark dark:border-[#334155] hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/20 transition-all cursor-default flex items-center gap-2 group/chip shadow-sm"
             >
               <HIcon size={18} />
@@ -144,9 +145,12 @@ export default function AboutMe() {
             <FileDownloadOutlined />
             Descargar CV
           </a>
-          <button className="flex items-center justify-center gap-2 px-8 py-3 bg-transparent border-2 border-gray-300 dark:border-slate-700/50 text-gray-800 dark:text-white font-bold rounded-xl hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">
+          <Link
+            href="#case-studies"
+            className="flex items-center justify-center gap-2 px-8 py-3 bg-transparent   text-gray-800 dark:text-white font-bold rounded-xl  dark:hover:text-primary transition-all"
+          >
             Ver Proyectos
-          </button>
+          </Link>
         </div>
       </div>
     </section>

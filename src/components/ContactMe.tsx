@@ -13,7 +13,7 @@ import {
   VerifiedOutlined,
   WorkOutline,
 } from "@mui/icons-material";
-import { GitHubDark, LinkedIn } from "developer-icons";
+import { GitHubDark, GitHubLight, LinkedIn } from "developer-icons";
 
 import SectionHeader from "./SectionHeader";
 import {
@@ -122,7 +122,12 @@ export default function ContactMe() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GitHubDark size={22} />
+                <span className="dark:hidden">
+                  <GitHubDark size={22} />
+                </span>
+                <span className="hidden dark:inline">
+                  <GitHubLight size={22} />
+                </span>
                 <span className="font-bold text-sm">GitHub</span>
               </a>
               <a
