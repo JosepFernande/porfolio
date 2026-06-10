@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Manrope } from "next/font/google";
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getLocale } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
@@ -55,11 +57,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <Script
           id="theme-bootstrap"
@@ -81,9 +86,11 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-(--font-display) transition-colors duration-300`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <Navbar />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
