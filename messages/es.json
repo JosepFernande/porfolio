@@ -1,0 +1,38 @@
+{
+  "Navbar": {
+    "items": {
+      "inicio": "Inicio",
+      "habilidades": "Habilidades",
+      "certificaciones": "Certificaciones",
+      "experiencia": "Experiencia",
+      "caseStudies": "Case Studies",
+      "workflow": "Workflow",
+      "contacto": "Contacto"
+    },
+    "ariaLabel": "Navegación principal",
+    "downloadCv": "Descargar CV"
+  },
+  "Layout": {
+    "metadata": {
+      "title": "Josep Fernández Ortega | Full Stack Developer",
+      "titleTemplate": "%s | Josep Fernández Ortega",
+      "description": "Portfolio profesional de Josep Fernández Ortega. Desarrollo soluciones web escalables con foco en arquitectura, rendimiento y experiencia de usuario.",
+      "keywords": [
+        "Josep Fernández Ortega",
+        "Full Stack Developer",
+        "Portfolio",
+        "Next.js",
+        "React",
+        "Node.js",
+        "TypeScript",
+        "Arquitectura de Software"
+      ]
+    }
+  },
+  "common": {
+    "role": "Full Stack Developer"
+  },
+  "LanguageToggle": {
+    "ariaLabel": "Cambiar idioma"
+  }
+}
