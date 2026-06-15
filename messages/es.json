@@ -37,6 +37,18 @@
   "common": {
     "role": "Full Stack Developer"
   },
+  "AboutMe": {
+    "tag": "Sobre Mí",
+    "greeting": "Hola, soy <br></br>",
+    "role": "Full Stack Developer",
+    "focusLabel": "Focus",
+    "focusValue": "Mejora Continua",
+    "bio1": "Soy un desarrollador apasionado por crear soluciones integrales, combinando un <strong>Frontend pulido</strong> con un <strong>Backend robusto</strong>.",
+    "bio2": "Mi filosofía se centra en la <primary>mejora continua</primary> y la aplicación de <strong>metodologías ágiles</strong> como Scrum para adaptarme rápidamente a los cambios y entregar valor real. Busco constantemente optimizar procesos y aprender nuevas tecnologías que eleven la calidad de cada proyecto.",
+    "pills": ["Clean Architecture", "UX-First", "Escalabilidad"],
+    "downloadCv": "Descargar CV",
+    "viewProjects": "Ver Proyectos"
+  },
   "LanguageToggle": {
     "ariaLabel": "Cambiar idioma"
   }
