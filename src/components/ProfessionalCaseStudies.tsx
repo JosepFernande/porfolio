@@ -8,37 +8,38 @@ const CASE_STUDIES = [
     id: "cs-peopleapps-maui-admin",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDMfCeIjZVtK04-uby4V6RcOkc5xqV8FxJ_BJsAwLPdeS_gJvOIzainTNdhPv7LsuebBmGZD3ckWiWn-JkGLiHJwRvvYGTd0fd1uLeyCzpWUBOQ8TN1SR84RaoypD2swMIT7JhPD79cBSpFIqpkPbuJRYIor6DPG-nqvGjEw756WEFHioE1o3-RiBZLP2cnf27Q_xjUoN9mwp7516MDTMeBYFgzp_0zBN9uSvgf783SNErPIc_Umvl2BSbjVzsQZD7iJOkMvdFjS68",
-    stack: ["Angular", ".NET MAUI", "JavaScript", "Gestión de usuarios", "Notificaciones"],
+    stack: ["angular", "dotnet-maui", "javascript", "user-management", "notifications"],
   },
   {
     id: "cs-createc-medical-platform",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBr76aGhSlMtnifgrD4Ex0U-m_BQx8QKEkveedMMcpPAfzfk5L5ce1aHF90Lunf553LQir-aGESvKNOHPUq3lxNxOizsYZpVuDssOaUnrYKk8-hct2wjQOpgPWg9g08zijdvNutOaaodUIHJbXU74PJ5lNPua0GHBbeSeSgjkKFxBAAKnaw858XZrkr2ftG2df09yiK3L7ng_lN4YXS2c4yu2eJ8ZW3h_G8Qb9kmAcFTQNU7d6qcVNGrNVGvuwbFRNkrqz2-KRDyVc",
     stack: [
-      "Laravel",
-      "Livewire",
-      "JavaScript",
-      "MySQL",
-      "Composer",
-      "Eloquent ORM",
+      "laravel",
+      "livewire",
+      "javascript",
+      "mysql",
+      "composer",
+      "eloquent-orm",
     ],
   },
   {
     id: "cs-peopleapps-ecommerce-maps",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDMfCeIjZVtK04-uby4V6RcOkc5xqV8FxJ_BJsAwLPdeS_gJvOIzainTNdhPv7LsuebBmGZD3ckWiWn-JkGLiHJwRvvYGTd0fd1uLeyCzpWUBOQ8TN1SR84RaoypD2swMIT7JhPD79cBSpFIqpkPbuJRYIor6DPG-nqvGjEw756WEFHioE1o3-RiBZLP2cnf27Q_xjUoN9mwp7516MDTMeBYFgzp_0zBN9uSvgf783SNErPIc_Umvl2BSbjVzsQZD7iJOkMvdFjS68",
-    stack: ["Angular", "JavaScript", "Mapas Interactivos", "Arquitectura por roles", "UX Operativa"],
+    stack: ["angular", "javascript", "interactive-maps", "role-architecture", "operational-ux"],
   },
   {
     id: "cs-peopleapps-legacy-modernization",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBr76aGhSlMtnifgrD4Ex0U-m_BQx8QKEkveedMMcpPAfzfk5L5ce1aHF90Lunf553LQir-aGESvKNOHPUq3lxNxOizsYZpVuDssOaUnrYKk8-hct2wjQOpgPWg9g08zijdvNutOaaodUIHJbXU74PJ5lNPua0GHBbeSeSgjkKFxBAAKnaw858XZrkr2ftG2df09yiK3L7ng_lN4YXS2c4yu2eJ8ZW3h_G8Qb9kmAcFTQNU7d6qcVNGrNVGvuwbFRNkrqz2-KRDyVc",
-    stack: ["Angular", "Razor", "JavaScript", "Signals", "OnPush", "Lazy Loading", "Zoneless"],
+    stack: ["angular", "razor", "javascript", "signals", "onpush", "lazy-loading", "zoneless"],
   },
 ];
 
 export default async function ProfessionalCaseStudies() {
   const t = await getTranslations("ProfessionalCaseStudies");
+  const tData = await getTranslations("DataCaseStudies");
   const items = raw<
     Record<
       string,
@@ -104,7 +105,7 @@ export default async function ProfessionalCaseStudies() {
                     {cs?.title ?? item.id}
                   </h3>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wide shrink-0">
-                    <LockOutlined className="text-sm!" /> NDA
+                    <LockOutlined className="text-sm!" /> {t("ndaBadge")}
                   </span>
                 </div>
 
@@ -148,12 +149,12 @@ export default async function ProfessionalCaseStudies() {
                 </div>
 
                 <div className="flex flex-wrap gap-2 pt-5 mt-6 border-t border-gray-100 dark:border-slate-700/50">
-                  {item.stack.map((tech) => (
+                  {item.stack.map((stackId) => (
                     <span
-                      key={tech}
+                      key={stackId}
                       className="px-3 py-1 rounded-lg text-xs font-medium bg-gray-100 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 border border-gray-200 dark:border-slate-700/50"
                     >
-                      {tech}
+                      {raw<string>(tData, `stack.${stackId}`)}
                     </span>
                   ))}
                 </div>

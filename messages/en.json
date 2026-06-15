@@ -161,11 +161,11 @@
       "title": "Team Collaboration",
       "body": "Cross-functional communication with technical and business teams, with task traceability and iterative deliveries. Quality software is born when development, product, and stakeholders work on shared objectives.",
       "tools": [
-        { "label": "Microsoft Teams" },
-        { "label": "Azure DevOps" },
-        { "label": "Git" },
-        { "label": "Scrum / Kanban / Scrumban" },
-        { "label": "OKRs" }
+        { "iconKey": "teams", "label": "Microsoft Teams" },
+        { "iconKey": "azure", "label": "Azure DevOps" },
+        { "iconKey": "git", "label": "Git" },
+        { "iconKey": "scrum", "label": "Scrum / Kanban / Scrumban" },
+        { "iconKey": "okrs", "label": "OKRs" }
       ]
     }
   },
@@ -235,6 +235,7 @@
       "approach": "Approach",
       "impact": "Impact"
     },
+    "ndaBadge": "NDA",
     "items": {
       "cs-peopleapps-maui-admin": {
         "title": "Angular Admin for .NET MAUI Ecosystem",
@@ -268,6 +269,28 @@
         "approach": "Incremental migration strategy to modern Angular applying Signals, OnPush Change Detection, Lazy Loading, and zoneless approach.",
         "impact": "Greater frontend technical consistency and functional evolution with lower operational risk."
       }
+    }
+  },
+  "DataCaseStudies": {
+    "stack": {
+      "angular": "Angular",
+      "composer": "Composer",
+      "dotnet-maui": ".NET MAUI",
+      "eloquent-orm": "Eloquent ORM",
+      "interactive-maps": "Interactive Maps",
+      "javascript": "JavaScript",
+      "laravel": "Laravel",
+      "lazy-loading": "Lazy Loading",
+      "livewire": "Livewire",
+      "mysql": "MySQL",
+      "notifications": "Notifications",
+      "onpush": "OnPush",
+      "operational-ux": "Operational UX",
+      "razor": "Razor",
+      "role-architecture": "Role-based Architecture",
+      "signals": "Signals",
+      "user-management": "User Management",
+      "zoneless": "Zoneless"
     }
   },
   "ProfessionalExperience": {

@@ -1,21 +1,18 @@
 import {
     AdsClickOutlined,
-    AutoGraphOutlined,
     Diversity3Outlined,
-    GitHub,
-    Groups2Outlined,
-    HubOutlined,
     RocketLaunchOutlined,
     SyncOutlined,
 } from "@mui/icons-material";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import { getTranslations } from "next-intl/server";
+import { TOOL_ICON_MAP } from "@/const/workflow.data";
 import { raw } from "@/lib/i18n-helpers";
 
 export default async function WorkFlow() {
     const t = await getTranslations("WorkFlow");
-    const teamTools = raw<{ label: string }[]>(t, "team.tools");
+    const teamTools = raw<{ iconKey: string; label: string }[]>(t, "team.tools");
     return (
         <section aria-labelledby="workflow-title" className="flex-grow flex flex-col items-center">
             <div className=" w-full mb-16 ">
@@ -113,12 +110,8 @@ export default async function WorkFlow() {
                             </p>
                             <div className="flex flex-wrap gap-3">
                                 {teamTools.map((tool) => (
-                                <div key={tool.label} className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-3 py-2 rounded-lg border border-transparent hover:border-primary/30 hover:text-primary transition-colors">
-                                    {tool.label === "Microsoft Teams" || tool.label === "Microsoft Teams" ? <Groups2Outlined className="text-lg!" /> :
-                                     tool.label === "Azure DevOps" ? <AutoGraphOutlined className="text-lg!" /> :
-                                     tool.label === "Git" ? <><HubOutlined className="text-lg!" /><GitHub className="text-lg!" /></> :
-                                     tool.label === "Scrum / Kanban / Scrumban" ? <SyncOutlined className="text-lg!" /> :
-                                     tool.label === "OKRs" ? <RocketLaunchOutlined className="text-lg!" /> : null}
+                                <div key={tool.iconKey} className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-3 py-2 rounded-lg border border-transparent hover:border-primary/30 hover:text-primary transition-colors">
+                                    {TOOL_ICON_MAP[tool.iconKey]}
                                     {tool.label}
                                 </div>
                                 ))}

@@ -161,11 +161,11 @@
       "title": "Colaboración en Equipo",
       "body": "Comunicación transversal con equipos técnicos y de negocio, con trazabilidad de tareas y entregas iterativas. El software de calidad nace cuando desarrollo, producto y stakeholders trabajan sobre objetivos compartidos.",
       "tools": [
-        { "label": "Microsoft Teams" },
-        { "label": "Azure DevOps" },
-        { "label": "Git" },
-        { "label": "Scrum / Kanban / Scrumban" },
-        { "label": "OKRs" }
+        { "iconKey": "teams", "label": "Microsoft Teams" },
+        { "iconKey": "azure", "label": "Azure DevOps" },
+        { "iconKey": "git", "label": "Git" },
+        { "iconKey": "scrum", "label": "Scrum / Kanban / Scrumban" },
+        { "iconKey": "okrs", "label": "OKRs" }
       ]
     }
   },
@@ -235,6 +235,7 @@
       "approach": "Enfoque",
       "impact": "Impacto"
     },
+    "ndaBadge": "NDA",
     "items": {
       "cs-peopleapps-maui-admin": {
         "title": "Administrador Angular para Ecosistema .NET MAUI",
@@ -268,6 +269,28 @@
         "approach": "Estrategia incremental de migración a Angular moderno aplicando Signals, Change Detection OnPush, Lazy Loading y enfoque zoneless.",
         "impact": "Mayor consistencia técnica del frontend y evolución funcional con menor riesgo operativo."
       }
+    }
+  },
+  "DataCaseStudies": {
+    "stack": {
+      "angular": "Angular",
+      "composer": "Composer",
+      "dotnet-maui": ".NET MAUI",
+      "eloquent-orm": "Eloquent ORM",
+      "interactive-maps": "Mapas Interactivos",
+      "javascript": "JavaScript",
+      "laravel": "Laravel",
+      "lazy-loading": "Lazy Loading",
+      "livewire": "Livewire",
+      "mysql": "MySQL",
+      "notifications": "Notificaciones",
+      "onpush": "OnPush",
+      "operational-ux": "UX Operativa",
+      "razor": "Razor",
+      "role-architecture": "Arquitectura por roles",
+      "signals": "Signals",
+      "user-management": "Gestión de usuarios",
+      "zoneless": "Zoneless"
     }
   },
   "ProfessionalExperience": {
