@@ -1,9 +1,12 @@
 "use client";
 
-import { FileDownloadOutlined } from "@mui/icons-material";
-import { useEffect, useState } from "react";
+import { FileDownloadOutlined, Menu } from "@mui/icons-material";
+import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
+import MobileMenu from "./MobileMenu";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const NAV_ITEMS = [
   { label: "Inicio", href: "#inicio" },
@@ -26,7 +29,15 @@ const SECTION_IDS = [
 ];
 
 export default function Navbar() {
+  const t = useTranslations("Navbar");
   const [activeHref, setActiveHref] = useState("#inicio");
+  const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  const mobileItems = NAV_ITEMS.map((item) => ({
+    href: item.href,
+    label: item.label,
+  }));
 
   useEffect(() => {
     const setFromHash = () => {
@@ -64,7 +75,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="w-full border-b border-gray-200 dark:border-slate-700/50 bg-background-light/75 dark:bg-background-dark/80 backdrop-blur-lg sticky top-0 z-50">
+    <>
+      <header className="w-full border-b border-gray-200 dark:border-slate-700/50 bg-background-light/75 dark:bg-background-dark/80 backdrop-blur-lg sticky top-0 z-50">
       <div className="px-6 lg:px-20 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="size-8 text-primary">
@@ -108,6 +120,7 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="flex items-center gap-4">
+            <LanguageToggle />
             <ThemeToggle variant="icon" />
             <a
               href="/CV-Josep-Fernandez-Ortega.pdf"
@@ -117,9 +130,39 @@ export default function Navbar() {
               <span>Descargar CV</span>
               <FileDownloadOutlined />
             </a>
+            <button
+              type="button"
+              ref={triggerRef}
+              className="flex md:hidden p-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800/60 text-slate-600 dark:text-slate-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label={t("menu.toggle")}
+              onClick={() => setIsOpen(true)}
+            >
+              <Menu />
+            </button>
           </div>
         </div>
       </div>
     </header>
+
+      <MobileMenu
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        triggerRef={triggerRef}
+        items={mobileItems}
+        localeToggle={<LanguageToggle />}
+        cvCta={
+          <a
+            href="/CV-Josep-Fernandez-Ortega.pdf"
+            download
+            className="flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-[0_6px_20px_rgba(16,185,129,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark"
+          >
+            <span>Descargar CV</span>
+            <FileDownloadOutlined />
+          </a>
+        }
+      />
+    </>
   );
 }
