@@ -101,6 +101,42 @@
       }
     }
   },
+  "ContactMe": {
+    "tag": "Available for work",
+    "title": "Let's Build Something",
+    "accent": "extraordinary",
+    "description": "I'm currently open to freelance opportunities and full-time roles. Have a project in mind? Write me or connect on social media.",
+    "findMeOn": "Find me on",
+    "quickResponse": "Quick Response",
+    "responseTime": "I usually respond within 24 hours.",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "example@domain.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "consent": "I accept the <link>privacy policy</link> and consent to the processing of my data to receive a response.",
+    "success": {
+      "title": "Message Sent!",
+      "body": "Thank you for reaching out. I'll get back to you as soon as possible.",
+      "sendAnother": "Send another message"
+    },
+    "rateLimited": "Too many attempts. Please wait {seconds} before trying again.",
+    "error": {
+      "title": "Could not send the message.",
+      "body": "The email service is temporarily unavailable. You can contact me directly at <email>fernandezjos98@gmail.com</email> or via <linkedin>LinkedIn</linkedin>."
+    },
+    "submitting": "Sending…",
+    "submit": "Send Message",
+    "privacyNote": "Your data is secure. I never send spam."
+  },
+  "Validation": {
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Invalid email address.",
+    "nameMax": "Name must be at most 100 characters.",
+    "messageMin": "Message must be at least 10 characters.",
+    "messageMax": "Message must be at most 5000 characters.",
+    "htmlNotAllowed": "HTML content is not allowed.",
+    "consentRequired": "You must accept the privacy policy."
+  },
   "WorkFlow": {
     "tag": "Workflow",
     "title": "Work",

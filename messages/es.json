@@ -101,6 +101,42 @@
       }
     }
   },
+  "ContactMe": {
+    "tag": "Disponible para trabajar",
+    "title": "Construyamos algo",
+    "accent": "extraordinario",
+    "description": "Actualmente estoy abierto a oportunidades freelance y roles a tiempo completo. ¿Tenés un proyecto en mente? Escribime o conectemos en redes sociales.",
+    "findMeOn": "Encuéntrame en",
+    "quickResponse": "Respuesta Rápida",
+    "responseTime": "Suelo responder dentro de las 24 horas.",
+    "emailLabel": "Tu Email",
+    "emailPlaceholder": "ejemplo@dominio.com",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "consent": "Acepto la <link>política de privacidad</link> y consiento el procesamiento de mis datos para recibir una respuesta.",
+    "success": {
+      "title": "¡Mensaje Enviado!",
+      "body": "Gracias por contactarme. Te responderé lo antes posible.",
+      "sendAnother": "Enviar otro mensaje"
+    },
+    "rateLimited": "Demasiados intentos. Por favor esperá {seconds} antes de intentar de nuevo.",
+    "error": {
+      "title": "No se pudo enviar el mensaje.",
+      "body": "El servicio de correo no está disponible momentáneamente. Podés contactarme directamente por <email>fernandezjos98@gmail.com</email> o vía <linkedin>LinkedIn</linkedin>."
+    },
+    "submitting": "Enviando…",
+    "submit": "Enviar Mensaje",
+    "privacyNote": "Tus datos están seguros. Nunca envío spam."
+  },
+  "Validation": {
+    "emailRequired": "El email es obligatorio.",
+    "emailInvalid": "Dirección de email inválida.",
+    "nameMax": "El nombre no puede superar los 100 caracteres.",
+    "messageMin": "El mensaje debe tener al menos 10 caracteres.",
+    "messageMax": "El mensaje no puede superar los 5000 caracteres.",
+    "htmlNotAllowed": "No se permite contenido HTML.",
+    "consentRequired": "Debes aceptar la política de privacidad."
+  },
   "WorkFlow": {
     "tag": "Workflow",
     "title": "Metodologías de",

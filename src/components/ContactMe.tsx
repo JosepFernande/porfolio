@@ -15,9 +15,10 @@ import {
 } from "@mui/icons-material";
 import { GitHubDark, GitHubLight, LinkedIn } from "developer-icons";
 
+import { useTranslations } from "next-intl";
 import SectionHeader from "./SectionHeader";
 import {
-  contactFormSchema,
+  createContactSchema,
   type ContactFormData,
 } from "@/lib/contact/validation";
 
@@ -40,6 +41,8 @@ interface ApiError {
 // ---------------------------------------------------------------------------
 
 export default function ContactMe() {
+  const t = useTranslations("ContactMe");
+  const tValidation = useTranslations("Validation");
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
   const [apiError, setApiError] = useState<ApiError | null>(null);
 
@@ -49,7 +52,7 @@ export default function ContactMe() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(createContactSchema(tValidation as (key: string) => string)),
   });
 
   // Hidden honeypot field — not part of the visible form
@@ -104,15 +107,15 @@ export default function ContactMe() {
         {/* ------------------------------------------------------------------ */}
         <div className="flex flex-col gap-8 animate-fade-in-up">
           <SectionHeader
-            tag="Disponible para trabajar"
-            title="Construyamos algo"
-            accent="extraordinario"
-            description="Actualmente estoy abierto a oportunidades freelance y roles a tiempo completo. ¿Tenés un proyecto en mente? Escribime o conectemos en redes sociales."
+            tag={t("tag")}
+            title={t("title")}
+            accent={t("accent")}
+            description={t("description")}
             titleId="contacto-title"
           />
           <div className="flex flex-col gap-4">
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-gray-500">
-              Encuéntrame en
+              {t("findMeOn")}
             </h3>
             <div className="flex flex-wrap gap-4">
               <a
@@ -154,9 +157,9 @@ export default function ContactMe() {
             <div className="flex items-center gap-4 text-slate-800 dark:text-white/80">
               <VerifiedOutlined className="text-3xl! text-primary" />
               <div>
-                <p className="font-bold">Respuesta Rápida</p>
+                <p className="font-bold">{t("quickResponse")}</p>
                 <p className="text-sm opacity-70">
-                  Suelo responder dentro de las 24 horas.
+                  {t("responseTime")}
                 </p>
               </div>
             </div>
@@ -177,16 +180,16 @@ export default function ContactMe() {
                   <CheckCircleOutlined className="text-4xl! text-primary animate-bounce-short" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">
-                  ¡Mensaje Enviado!
+                  {t("success.title")}
                 </h3>
                 <p className="text-slate-500 dark:text-gray-400 text-sm">
-                  Gracias por contactarme. Te responderé lo antes posible.
+                  {t("success.body")}
                 </p>
                 <button
                   className="mt-6 text-primary font-bold text-sm hover:underline"
                   onClick={handleReset}
                 >
-                  Enviar otro mensaje
+                  {t("success.sendAnother")}
                 </button>
               </div>
             )}
@@ -211,11 +214,11 @@ export default function ContactMe() {
 
               {/* Email */}
               <div className="space-y-2 group/input">
-                <label
+                  <label
                   className="text-sm font-semibold text-slate-700 dark:text-gray-300 ml-1 transition-colors group-focus-within/input:text-primary"
                   htmlFor="email"
                 >
-                  Tu Email
+                  {t("emailLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -225,7 +228,7 @@ export default function ContactMe() {
                     {...register("email")}
                     className="w-full pl-12 pr-4 py-4 rounded-xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-600 focus:border-primary dark:focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 aria-invalid:border-red-400"
                     id="email"
-                    placeholder="ejemplo@dominio.com"
+                    placeholder={t("emailPlaceholder")}
                     type="email"
                     aria-invalid={errors.email ? "true" : undefined}
                     aria-describedby={errors.email ? "email-error" : undefined}
@@ -244,11 +247,11 @@ export default function ContactMe() {
 
               {/* Message */}
               <div className="space-y-2 group/input">
-                <label
+                  <label
                   className="text-sm font-semibold text-slate-700 dark:text-gray-300 ml-1 transition-colors group-focus-within/input:text-primary"
                   htmlFor="message"
                 >
-                  Mensaje
+                  {t("messageLabel")}
                 </label>
                 <div className="relative">
                   <div className="absolute top-4 left-0 pl-4 flex items-center pointer-events-none">
@@ -258,7 +261,7 @@ export default function ContactMe() {
                     {...register("message")}
                     className="w-full pl-12 pr-4 py-4 rounded-xl bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-600 focus:border-primary dark:focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 aria-invalid:border-red-400"
                     id="message"
-                    placeholder="Cuéntame sobre tu proyecto..."
+                    placeholder={t("messagePlaceholder")}
                     rows={5}
                     aria-invalid={errors.message ? "true" : undefined}
                     aria-describedby={
@@ -293,17 +296,18 @@ export default function ContactMe() {
                     htmlFor="consent"
                     className="text-sm text-slate-600 dark:text-gray-400 cursor-pointer"
                   >
-                    Acepto la{" "}
-                    <a
-                      href="/politica-de-privacidad"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline font-semibold"
-                    >
-                      política de privacidad
-                    </a>{" "}
-                    y consiento el procesamiento de mis datos para recibir una
-                    respuesta.
+                    {t.rich("consent", {
+                      link: (chunks) => (
+                        <a
+                          href="/politica-de-privacidad"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline font-semibold"
+                        >
+                          {chunks}
+                        </a>
+                      ),
+                    })}
                   </label>
                   {errors.consent && (
                     <p
@@ -325,11 +329,11 @@ export default function ContactMe() {
                 >
                   <ErrorOutlineOutlined className="text-base! mt-0.5 shrink-0" />
                   <span>
-                    Demasiados intentos. Por favor esperá{" "}
-                    {apiError?.retryAfterSeconds
-                      ? `${apiError.retryAfterSeconds} segundos`
-                      : "unos minutos"}{" "}
-                    antes de intentar de nuevo.
+                    {t("rateLimited", {
+                      seconds: apiError?.retryAfterSeconds
+                        ? `${apiError.retryAfterSeconds}`
+                        : "unos minutos",
+                    })}
                   </span>
                 </div>
               )}
@@ -341,27 +345,29 @@ export default function ContactMe() {
                 >
                   <div className="flex items-center gap-2 text-red-700 dark:text-red-400 font-semibold">
                     <ErrorOutlineOutlined className="text-base! shrink-0" />
-                    <span>No se pudo enviar el mensaje.</span>
+                    <span>{t("error.title")}</span>
                   </div>
                   <p className="text-red-600 dark:text-red-300 text-xs ml-6">
-                    El servicio de correo no está disponible momentáneamente.
-                    Podés contactarme directamente por{" "}
-                    <a
-                      href="mailto:fernandezjos98@gmail.com"
-                      className="underline font-semibold hover:text-primary"
-                    >
-                      fernandezjos98@gmail.com
-                    </a>{" "}
-                    o vía{" "}
-                    <a
-                      href="https://www.linkedin.com/in/josep-fern%C3%A1ndez-a84174247/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline font-semibold hover:text-primary"
-                    >
-                      LinkedIn
-                    </a>
-                    .
+                    {t.rich("error.body", {
+                      email: (chunks) => (
+                        <a
+                          href="mailto:fernandezjos98@gmail.com"
+                          className="underline font-semibold hover:text-primary"
+                        >
+                          {chunks}
+                        </a>
+                      ),
+                      linkedin: (chunks) => (
+                        <a
+                          href="https://www.linkedin.com/in/josep-fern%C3%A1ndez-a84174247/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline font-semibold hover:text-primary"
+                        >
+                          {chunks}
+                        </a>
+                      ),
+                    })}
                   </p>
                 </div>
               )}
@@ -376,11 +382,11 @@ export default function ContactMe() {
                   aria-busy={isSubmitting}
                 >
                   {isSubmitting ? (
-                    <span className="relative z-10">Enviando…</span>
+                    <span className="relative z-10">{t("submitting")}</span>
                   ) : (
                     <>
                       <span className="relative z-10 transition-transform duration-300 group-hover:-translate-y-12">
-                        Enviar Mensaje
+                        {t("submit")}
                       </span>
                       <SendOutlined className="absolute z-10 transition-all duration-300 translate-y-12 group-hover:translate-y-0 text-xl" />
                       <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer bg-linear-to-r from-transparent via-white/20 to-transparent z-0" />
@@ -393,7 +399,7 @@ export default function ContactMe() {
 
           <div className="mt-6 flex justify-center lg:justify-start gap-2 text-sm text-slate-400 dark:text-gray-500">
             <LockOutlined className="text-sm!" />
-            <p>Tus datos están seguros. Nunca envío spam.</p>
+            <p>{t("privacyNote")}</p>
           </div>
         </div>
       </div>
