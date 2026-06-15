@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Close } from "@mui/icons-material";
 
@@ -10,6 +10,7 @@ interface MobileMenuProps {
   triggerRef: React.RefObject<HTMLButtonElement | null>;
   items: { href: string; label: string }[];
   localeToggle: React.ReactNode;
+  themeToggle: React.ReactNode;
   cvCta: React.ReactNode;
 }
 
@@ -21,6 +22,7 @@ export default function MobileMenu({
   triggerRef,
   items,
   localeToggle,
+  themeToggle,
   cvCta,
 }: MobileMenuProps) {
   const t = useTranslations("Navbar");
@@ -96,11 +98,10 @@ export default function MobileMenu({
     <>
       {/* Backdrop — closes on click, blocks scroll-through on iOS */}
       <div
-        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 motion-reduce:transition-none touch-none ${
-          isOpen
-            ? "opacity-100"
-            : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 motion-reduce:transition-none touch-none ${isOpen
+          ? "opacity-100"
+          : "pointer-events-none opacity-0"
+          }`}
         onClick={isOpen ? onClose : undefined}
         aria-hidden="true"
       />
@@ -112,9 +113,8 @@ export default function MobileMenu({
         role="dialog"
         aria-modal="true"
         aria-label={t("menu.open")}
-        className={`fixed top-0 right-0 z-[60] flex h-full w-72 flex-col bg-surface-light dark:bg-surface-dark shadow-2xl transition-transform duration-300 ease-in-out motion-reduce:transition-none ${
-          isOpen ? "translate-x-0" : "translate-x-full invisible"
-        }`}
+        className={`fixed top-0 right-0 z-[60] flex h-full w-72 flex-col bg-surface-light dark:bg-surface-dark shadow-2xl transition-transform duration-300 ease-in-out motion-reduce:transition-none ${isOpen ? "translate-x-0" : "translate-x-full invisible"
+          }`}
       >
         {/* Close button */}
         <div className="flex justify-end p-4">
@@ -147,7 +147,10 @@ export default function MobileMenu({
 
         {/* Language toggle + CV CTA */}
         <div className="flex flex-col gap-3 px-4 pb-6">
-          {localeToggle}
+          <div className="flex sm:hidden gap-3 justify-between">
+            {localeToggle}
+            {themeToggle}
+          </div>
           {cvCta}
         </div>
       </div>

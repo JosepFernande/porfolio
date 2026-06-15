@@ -141,6 +141,7 @@ export default function Navbar() {
         triggerRef={triggerRef}
         items={navItems}
         localeToggle={<LanguageToggle />}
+        themeToggle={<ThemeToggle variant="icon" />}
         cvCta={
           <a
             href="/CV-Josep-Fernandez-Ortega.pdf"
