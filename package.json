@@ -17,6 +17,7 @@
     "@react-email/render": "^2.0.8",
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.38.0",
+    "@vercel/analytics": "^2.0.1",
     "developer-icons": "^6.0.4",
     "next": "16.0.10",
     "next-intl": "^4.13.0",
