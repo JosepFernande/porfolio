@@ -8,14 +8,14 @@ import MobileMenu from "./MobileMenu";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-const NAV_ITEMS = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Habilidades", href: "#habilidades" },
-  { label: "Certificaciones", href: "#certificaciones" },
-  { label: "Experiencia", href: "#experiencia" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Workflow", href: "#workflow" },
-  { label: "Contacto", href: "#contacto" },
+const NAV_CONFIG = [
+  { sectionId: "inicio", i18nKey: "inicio" },
+  { sectionId: "habilidades", i18nKey: "habilidades" },
+  { sectionId: "certificaciones", i18nKey: "certificaciones" },
+  { sectionId: "experiencia", i18nKey: "experiencia" },
+  { sectionId: "case-studies", i18nKey: "caseStudies" },
+  { sectionId: "workflow", i18nKey: "workflow" },
+  { sectionId: "contacto", i18nKey: "contacto" },
 ];
 
 const SECTION_IDS = [
@@ -34,15 +34,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
-  const mobileItems = NAV_ITEMS.map((item) => ({
-    href: item.href,
-    label: item.label,
+  const navItems = NAV_CONFIG.map((item) => ({
+    href: `#${item.sectionId}`,
+    label: t(`items.${item.i18nKey}`),
   }));
 
   useEffect(() => {
     const setFromHash = () => {
       const hash = globalThis.location.hash;
-      if (hash && NAV_ITEMS.some((item) => item.href === hash)) {
+      if (hash && NAV_CONFIG.some((item) => `#${item.sectionId}` === hash)) {
         setActiveHref(hash);
       }
     };
@@ -100,12 +100,12 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-8">
           <nav
-            aria-label="Navegación principal"
+            aria-label={t("ariaLabel")}
             className="hidden md:flex items-center gap-2 p-1 rounded-xl bg-white/70 dark:bg-surface-dark/70 border border-gray-200 dark:border-slate-700/50"
           >
-            {NAV_ITEMS.map((item) => (
+            {navItems.map((item) => (
               <Link
-                key={item.label}
+                key={item.href}
                 className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                   activeHref === item.href
                     ? "bg-primary/12 text-primary"
@@ -127,7 +127,7 @@ export default function Navbar() {
               download
               className="hidden sm:flex bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all items-center gap-2 shadow-[0_6px_20px_rgba(16,185,129,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark"
             >
-              <span>Descargar CV</span>
+              <span>{t("downloadCv")}</span>
               <FileDownloadOutlined />
             </a>
             <button
@@ -150,7 +150,7 @@ export default function Navbar() {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         triggerRef={triggerRef}
-        items={mobileItems}
+        items={navItems}
         localeToggle={<LanguageToggle />}
         cvCta={
           <a
@@ -158,7 +158,7 @@ export default function Navbar() {
             download
             className="flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-[0_6px_20px_rgba(16,185,129,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark"
           >
-            <span>Descargar CV</span>
+            <span>{t("downloadCv")}</span>
             <FileDownloadOutlined />
           </a>
         }
