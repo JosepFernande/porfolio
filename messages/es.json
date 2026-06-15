@@ -101,6 +101,41 @@
       }
     }
   },
+  "ProfessionalExperience": {
+    "tag": "Experiencia",
+    "title": "Trayectoria",
+    "accent": "Profesional",
+    "description": "Experiencia real en desarrollo de aplicaciones empresariales, combinando mantenimiento evolutivo, modernización de legacy y definición de soluciones desde cero.",
+    "ndaAriaLabel": "Aviso de confidencialidad",
+    "ndaTitle": "Transparencia NDA",
+    "ndaBody": "Algunos detalles de clientes/proyectos se mantienen reservados por confidencialidad. En entrevista técnica comparto enfoque, decisiones e impacto.",
+    "items": {
+      "createc-1": {
+        "title": "Desarrollador Full Stack",
+        "company": "Createc Solution S.A",
+        "period": "Agosto 2023 - Enero 2024",
+        "summary": "Desarrollo de una plataforma web para la gestión de consultas médicas y diferentes tipos de exámenes clínicos, participando en decisiones de diseño técnico y arquitectura.",
+        "bullets": [
+          "Implementación de módulos funcionales para la gestión de consultas y exámenes.",
+          "Diseño de estructura de datos y flujos de negocio sobre MySQL.",
+          "Gestión de dependencias con Composer y uso de migraciones con Eloquent ORM."
+        ]
+      },
+      "peopleapps-2": {
+        "title": "Desarrollador Frontend",
+        "company": "PeopleApps",
+        "period": "Febrero 2024 - Actualidad",
+        "summary": "Evolución de aplicaciones empresariales frontend en Angular y Razor, incluyendo mantenimiento de sistemas legacy y definición de proyectos nuevos desde cero.",
+        "bullets": [
+          "Definición de arquitectura, patrones, stack, metodología y file system para nuevos proyectos.",
+          "Liderazgo técnico de equipo durante un período, impulsando estándares de desarrollo.",
+          "Participación en frontend de aplicaciones con .NET MAUI y construcción de administrador Angular para notificaciones, usuarios y operación general.",
+          "Trabajo en proyecto e-commerce con módulos por rol (administrador, proveedor, cliente) e integración de mapas interactivos.",
+          "Migración del sistema core legacy hacia Angular moderno usando Signals, OnPush, Lazy Loading y enfoque zoneless."
+        ]
+      }
+    }
+  },
   "Certifications": {
     "tag": "Credenciales",
     "title": "Certificaciones",

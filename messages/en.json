@@ -101,6 +101,41 @@
       }
     }
   },
+  "ProfessionalExperience": {
+    "tag": "Experience",
+    "title": "Professional",
+    "accent": "Career",
+    "description": "Real experience in enterprise application development, combining evolutionary maintenance, legacy modernization, and greenfield solution design.",
+    "ndaAriaLabel": "Confidentiality notice",
+    "ndaTitle": "NDA Transparency",
+    "ndaBody": "Some client/project details remain confidential. During technical interviews I share approach, decisions, and impact.",
+    "items": {
+      "createc-1": {
+        "title": "Full Stack Developer",
+        "company": "Createc Solution S.A",
+        "period": "August 2023 - January 2024",
+        "summary": "Development of a web platform for managing medical consultations and various types of clinical exams, participating in technical design and architecture decisions.",
+        "bullets": [
+          "Implementation of functional modules for consultation and exam management.",
+          "Data structure and business flow design on MySQL.",
+          "Dependency management with Composer and migrations using Eloquent ORM."
+        ]
+      },
+      "peopleapps-2": {
+        "title": "Frontend Developer",
+        "company": "PeopleApps",
+        "period": "February 2024 - Present",
+        "summary": "Evolution of enterprise frontend applications in Angular and Razor, including legacy system maintenance and greenfield project definition.",
+        "bullets": [
+          "Architecture, patterns, stack, methodology and file system definition for new projects.",
+          "Technical team leadership during a period, driving development standards.",
+          "Frontend development for .NET MAUI applications and Angular admin panel for notifications, users and general operations.",
+          "Work on e-commerce project with role-based modules (admin, provider, customer) and interactive map integration.",
+          "Migration of core legacy system to modern Angular using Signals, OnPush, Lazy Loading and zoneless approach."
+        ]
+      }
+    }
+  },
   "Certifications": {
     "tag": "Credentials",
     "title": "Certifications",
