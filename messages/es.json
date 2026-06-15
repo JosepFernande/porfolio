@@ -101,6 +101,64 @@
       }
     }
   },
+  "Certifications": {
+    "tag": "Credenciales",
+    "title": "Certificaciones",
+    "accent": "& Logros",
+    "description": "Validación de conocimientos técnicos, frameworks modernos y metodologías ágiles.",
+    "viewCredential": "Ver Credencial",
+    "downloadFullCv": "Descargar CV Completo",
+    "filters": {
+      "all": "Todas",
+      "agile": "Ágiles",
+      "technical": "Técnicas",
+      "academic": "Académicas"
+    },
+    "items": {
+      "product-owner": {
+        "title": "Product Owner",
+        "issuer": "Certificación Interna",
+        "description": "Enfoque en definición de valor de producto, priorización de backlog y alineación entre negocio y equipo técnico.",
+        "tags": ["Producto", "Backlog"]
+      },
+      "scrum-master": {
+        "title": "Scrum Master",
+        "issuer": "SCRUMstudy",
+        "description": "Certificación orientada al liderazgo ágil, facilitación de equipos y mejora continua en procesos Scrum.",
+        "tags": ["Agile", "Liderazgo"]
+      },
+      "scrum-developer": {
+        "title": "Scrum Developer",
+        "issuer": "SCRUMstudy",
+        "description": "Enfoque práctico de Scrum para desarrolladores, integrando prácticas técnicas con la gestión del backlog.",
+        "tags": ["DevOps", "Teamwork"]
+      },
+      "angular-junior": {
+        "title": "Angular Junior",
+        "issuer": "Certificación Técnica",
+        "description": "Especialización en desarrollo Frontend utilizando Angular, RxJS y TypeScript para aplicaciones SPA robustas.",
+        "tags": ["Frontend", "TypeScript"]
+      },
+      "bachillerato-informatica-empresarial": {
+        "title": "Bachillerato en Informática Empresarial",
+        "issuer": "Universidad de Costa Rica",
+        "description": "Formación universitaria orientada a análisis de sistemas, desarrollo de software y aplicación de tecnologías de información en entornos empresariales.",
+        "tags": ["Académico", "TI Empresarial"]
+      },
+      "scrum-fundamentals": {
+        "title": "Scrum Fundamentals",
+        "issuer": "SCRUMstudy",
+        "description": "Certificación en los conceptos fundamentales de la metodología Scrum, roles y eventos clave para la gestión ágil.",
+        "tags": ["Agile", "Fundamentos"]
+      },
+      "tecnico-soporte": {
+        "title": "Técnico Medio en Informática en Soporte",
+        "issuer": "CTP Umberto Melloni Campanini",
+        "description": "Especialidad técnica en soporte informático, mantenimiento, resolución de incidencias y fundamentos de infraestructura tecnológica.",
+        "tags": ["Soporte", "Infraestructura"]
+      }
+    }
+  },
   "LanguageToggle": {
     "ariaLabel": "Cambiar idioma"
   }
