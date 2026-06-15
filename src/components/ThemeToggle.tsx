@@ -2,6 +2,7 @@
 
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 type Theme = "light" | "dark";
 
@@ -29,6 +30,7 @@ function setStoredTheme(theme: Theme) {
 }
 
 export default function ThemeToggle({ variant = "icon" }: ThemeToggleProps) {
+  const t = useTranslations("ThemeToggle");
   const [theme, setTheme] = useState<Theme>(() => resolveInitialTheme());
 
   useEffect(() => {
@@ -44,7 +46,7 @@ export default function ThemeToggle({ variant = "icon" }: ThemeToggleProps) {
       <div className="flex items-center gap-3 bg-gray-100 dark:bg-slate-800/50 px-4 py-2 rounded-xl border border-transparent dark:border-slate-700/50">
         <LightModeOutlined className="text-slate-600 dark:text-slate-300" />
         <button
-          aria-label="Cambiar tema"
+          aria-label={t("ariaLabel")}
           className="relative flex h-6 w-11 cursor-pointer items-center rounded-full bg-gray-300 dark:bg-slate-700 p-1 transition-colors"
           onClick={toggleTheme}
           type="button"
@@ -62,7 +64,7 @@ export default function ThemeToggle({ variant = "icon" }: ThemeToggleProps) {
 
   return (
     <button
-      aria-label="Cambiar tema"
+      aria-label={t("ariaLabel")}
       className="flex items-center justify-center p-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800/60 text-slate-600 dark:text-slate-300 transition-colors"
       onClick={toggleTheme}
       type="button"

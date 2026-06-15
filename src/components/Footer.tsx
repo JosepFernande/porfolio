@@ -1,9 +1,11 @@
 "use client";
 import { ArrowUpward } from "@mui/icons-material";
 import { GitHubDark, GitHubLight, Gmail, LinkedIn } from "developer-icons";
+import { useTranslations } from "next-intl";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
   return (
     <footer className="w-full bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-primary/20 py-12 transition-colors duration-300">
       <div className="layout-container max-w-240 mx-auto px-6 md:px-10">
@@ -19,7 +21,7 @@ export default function Footer() {
               Full Stack Developer
               <br />
               <span className="opacity-70 font-normal">
-                Construyendo soluciones web escalables.
+                {t("tagline")}
               </span>
             </p>
           </div>
@@ -75,26 +77,26 @@ export default function Footer() {
               <div className="group-hover:-translate-y-1 transition-transform duration-300">
                 <ArrowUpward />
               </div>
-              <span className="truncate">Scroll to Top</span>
+              <span className="truncate">{t("scrollTop")}</span>
             </a>
           </div>
         </div>
         <div className="border-t border-gray-200 dark:border-slate-700/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 dark:text-slate-400 text-xs font-normal">
-            © 2026 Josep Fernández Ortega. Todos los derechos reservados.
+            {t("copyright")}
           </p>
-          <div className="flex gap-6" aria-label="Enlaces legales">
+          <div className="flex gap-6" aria-label={t("legalAriaLabel")}>
             <a
               className="text-xs text-gray-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
               href="/politica-de-privacidad"
             >
-              Política de Privacidad
+              {t("privacyLink")}
             </a>
             <a
               className="text-xs text-gray-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
               href="/terminos-de-servicio"
             >
-              Términos de Servicio
+              {t("termsLink")}
             </a>
           </div>
         </div>

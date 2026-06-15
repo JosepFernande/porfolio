@@ -1,14 +1,27 @@
 import { TECHNICAL_SKILLS } from "@/const/technical-skills.data";
 import SectionHeader from "./SectionHeader";
+import { getTranslations } from "next-intl/server";
+import { raw } from "@/lib/i18n-helpers";
 
-export default function TechnicalSkill() {
+export default async function TechnicalSkill() {
+    const t = await getTranslations("TechnicalSkills");
+    const items = raw<
+        Record<
+            string,
+            {
+                title: string;
+                description: string;
+                tags: Record<string, { label: string; level?: string }>;
+            }
+        >
+    >(t, "items");
     return (
         <section aria-labelledby="habilidades-title" className="max-w-300 mx-auto w-full flex flex-col gap-12 animate-fade-in-up">
             <SectionHeader
-                tag="Expertise"
-                title="Habilidades"
-                accent="Técnicas"
-                description="Un conjunto de tecnologías modernas enfocadas en el rendimiento y la escalabilidad."
+                tag={t("tag")}
+                title={t("title")}
+                accent={t("accent")}
+                description={t("description")}
                 titleId="habilidades-title"
             />
 
@@ -17,10 +30,11 @@ export default function TechnicalSkill() {
                 {TECHNICAL_SKILLS.map((skill) => {
                     const Icon = skill.icon;
                     const BgIcon = skill.bgIcon;
+                    const item = items[skill.id];
 
                     return (
                         <div
-                            key={skill.title}
+                            key={skill.id}
                             className="group relative flex flex-col gap-6 p-6 rounded-xl bg-card-light dark:bg-card-dark
               border border-gray-200 dark:border-slate-700/50
               hover:border-primary/50 dark:hover:border-primary/50
@@ -45,42 +59,43 @@ export default function TechnicalSkill() {
                             {/* Texto */}
                             <div className="flex flex-col gap-2 z-10">
                                 <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
-                                    {skill.title}
+                                    {item?.title ?? skill.id}
                                 </h3>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                                    {skill.description}
+                                    {item?.description ?? ""}
                                 </p>
                             </div>
 
                             {/* Tags */}
                             <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100 dark:border-slate-700/50">
-                                {skill.tags.map((tag) =>
-                                    tag.highlight ? (
+                                {skill.tags.map((tag) => {
+                                    const tagData = item?.tags[tag.id];
+                                    return tag.highlight ? (
                                         <span
-                                            key={tag.label}
+                                            key={tag.id}
                                             className="px-3 py-1 rounded-lg text-xs font-semibold
                       bg-primary/10 text-primary border border-primary/20
                       flex items-center gap-1"
                                         >
-                                            {tag.label}
-                                            {tag.level && (
+                                            {tagData?.label ?? tag.id}
+                                            {tagData?.level && (
                                                 <span className="text-[10px] uppercase opacity-70 ml-1">
-                                                    {tag.level}
+                                                    {tagData.level}
                                                 </span>
                                             )}
                                         </span>
                                     ) : (
                                         <span
-                                            key={tag.label}
+                                            key={tag.id}
                                             className="px-3 py-1 rounded-lg text-xs font-medium
                       bg-gray-100 dark:bg-slate-800/50
                       text-slate-600 dark:text-slate-300
                       border border-gray-200 dark:border-slate-700/50"
                                         >
-                                            {tag.label}
+                                            {tagData?.label ?? tag.id}
                                         </span>
-                                    )
-                                )}
+                                    );
+                                })}
                             </div>
                         </div>
                     );

@@ -11,8 +11,10 @@ import {
   React,
 } from "developer-icons";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-export default function AboutMe() {
+export default async function AboutMe() {
+  const t = await getTranslations("AboutMe");
   const habilities = [
     {
       htitle: "JavaScript",
@@ -67,10 +69,10 @@ export default function AboutMe() {
           </div>
           <div>
             <p className="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">
-              Focus
+              {t("focusLabel")}
             </p>
             <p className="text-sm font-bold text-gray-800 dark:text-white">
-              Mejora Continua
+              {t("focusValue")}
             </p>
           </div>
         </div>
@@ -79,42 +81,41 @@ export default function AboutMe() {
         <div className="space-y-4">
           <p className="text-primary font-semibold tracking-[0.2em] text-sm uppercase flex items-center gap-2">
             <span className="w-8 h-0.5 bg-primary"></span>
-            Sobre Mí
+            {t("tag")}
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 dark:text-white">
-            Hola, soy <br className="hidden md:block" />
+            {t.rich("greeting", {
+              br: () => <br className="hidden md:block" />,
+            })}{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-gray-900 via-gray-700 to-primary dark:from-white dark:via-gray-200 dark:to-primary">
               Josep Fernández
             </span>
           </h1>
           <h2 className="text-xl md:text-2xl font-medium text-primary/90">
-            Full Stack Developer
+            {t("role")}
           </h2>
         </div>
         <div className="space-y-4">
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-normal">
-            Soy un desarrollador apasionado por crear soluciones integrales,
-            combinando un{" "}
-            <strong className="text-gray-900 dark:text-white font-semibold">
-              Frontend pulido
-            </strong>{" "}
-            con un{" "}
-            <strong className="text-gray-900 dark:text-white font-semibold">
-              Backend robusto
-            </strong>
-            .
+            {t.rich("bio1", {
+              strong: (chunks) => (
+                <strong className="text-gray-900 dark:text-white font-semibold">
+                  {chunks}
+                </strong>
+              ),
+            })}
           </p>
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-normal">
-            Mi filosofía se centra en la{" "}
-            <span className="text-primary font-medium">mejora continua</span> y
-            la aplicación de <strong>metodologías ágiles</strong> como Scrum
-            para adaptarme rápidamente a los cambios y entregar valor real.
-            Busco constantemente optimizar procesos y aprender nuevas
-            tecnologías que eleven la calidad de cada proyecto.
+            {t.rich("bio2", {
+              primary: (chunks) => (
+                <span className="text-primary font-medium">{chunks}</span>
+              ),
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          {["Clean Architecture", "UX-First", "Escalabilidad"].map((pill) => (
+          {(t.raw("pills") as string[]).map((pill) => (
             <span
               key={pill}
               className="px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-primary/10 text-primary border border-primary/20"
@@ -143,13 +144,13 @@ export default function AboutMe() {
             className="flex items-center justify-center gap-2 px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary-hover transition-all hover:shadow-glow transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark"
           >
             <FileDownloadOutlined />
-            Descargar CV
+            {t("downloadCv")}
           </a>
           <Link
             href="#case-studies"
             className="flex items-center justify-center gap-2 px-8 py-3 bg-transparent   text-gray-800 dark:text-white font-bold rounded-xl  dark:hover:text-primary transition-all"
           >
-            Ver Proyectos
+            {t("viewProjects")}
           </Link>
         </div>
       </div>

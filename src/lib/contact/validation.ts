@@ -26,3 +26,31 @@ export const contactFormSchema = z.object({
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
+
+/**
+ * Creates a localized contact form schema using the provided translator.
+ * Use inside a component: createContactSchema(t) where t = useTranslations('Validation').
+ */
+export function createContactSchema(t: (key: string) => string) {
+  return z.object({
+    name: z
+      .string()
+      .max(100, { message: t("nameMax") })
+      .optional(),
+    email: z
+      .string()
+      .min(1, { message: t("emailRequired") })
+      .email({ message: t("emailInvalid") }),
+    message: z
+      .string()
+      .min(10, { message: t("messageMin") })
+      .max(5000, { message: t("messageMax") })
+      .refine((msg) => !HTML_INJECTION_RE.test(msg), {
+        message: t("htmlNotAllowed"),
+      }),
+    consent: z.literal(true, {
+      errorMap: () => ({ message: t("consentRequired") }),
+    }),
+    honeypot: z.string().optional(),
+  });
+}

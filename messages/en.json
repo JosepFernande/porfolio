@@ -1,0 +1,431 @@
+{
+  "Navbar": {
+    "items": {
+      "inicio": "Home",
+      "habilidades": "Skills",
+      "certificaciones": "Certifications",
+      "experiencia": "Experience",
+      "caseStudies": "Case Studies",
+      "workflow": "Workflow",
+      "contacto": "Contact"
+    },
+    "ariaLabel": "Main navigation",
+    "downloadCv": "Download CV",
+    "menu": {
+      "toggle": "Open menu",
+      "close": "Close menu",
+      "open": "Menu"
+    }
+  },
+  "Layout": {
+    "metadata": {
+      "title": "Josep Fernández Ortega | Full Stack Developer",
+      "titleTemplate": "%s | Josep Fernández Ortega",
+      "description": "Professional portfolio of Josep Fernández Ortega. Building scalable web solutions focused on architecture, performance and user experience.",
+      "keywords": [
+        "Josep Fernández Ortega",
+        "Full Stack Developer",
+        "Portfolio",
+        "Next.js",
+        "React",
+        "Node.js",
+        "TypeScript",
+        "Software Architecture"
+      ]
+    }
+  },
+  "common": {
+    "role": "Full Stack Developer"
+  },
+  "AboutMe": {
+    "tag": "About Me",
+    "greeting": "Hi, I'm <br></br>",
+    "role": "Full Stack Developer",
+    "focusLabel": "Focus",
+    "focusValue": "Continuous Improvement",
+    "bio1": "I'm a developer passionate about creating end-to-end solutions, combining a <strong>polished Frontend</strong> with a <strong>robust Backend</strong>.",
+    "bio2": "My philosophy focuses on <primary>continuous improvement</primary> and applying <strong>agile methodologies</strong> like Scrum to quickly adapt to changes and deliver real value. I constantly seek to optimize processes and learn new technologies that elevate the quality of every project.",
+    "pills": ["Clean Architecture", "UX-First", "Scalability"],
+    "downloadCv": "Download CV",
+    "viewProjects": "View Projects"
+  },
+  "TechnicalSkills": {
+    "tag": "Expertise",
+    "title": "Technical",
+    "accent": "Skills",
+    "description": "A modern technology stack focused on performance and scalability.",
+    "items": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "Building responsive and dynamic interfaces with a focus on user experience.",
+        "tags": {
+          "angular": { "label": "Angular", "level": "Advanced" },
+          "signals": { "label": "Signals" },
+          "onpush": { "label": "OnPush" },
+          "lazyLoading": { "label": "Lazy Loading" },
+          "razor": { "label": "Razor" },
+          "jsTs": { "label": "JavaScript / TypeScript" }
+        }
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Robust server architecture and secure data management.",
+        "tags": {
+          "nestjs": { "label": "NestJS" },
+          "laravel": { "label": "Laravel" },
+          "apiRest": { "label": "REST APIs" },
+          "jwtGuards": { "label": "JWT + Guards" },
+          "modularArch": { "label": "Modular Architecture" }
+        }
+      },
+      "database": {
+        "title": "Database",
+        "description": "Design and optimization of relational schemas for data integrity.",
+        "tags": {
+          "mysql": { "label": "MySQL" },
+          "postgresql": { "label": "PostgreSQL" },
+          "sqlServer": { "label": "SQL Server" },
+          "prismaOrm": { "label": "Prisma ORM" },
+          "eloquentOrm": { "label": "Eloquent ORM" }
+        }
+      },
+      "tools": {
+        "title": "Tools",
+        "description": "Efficient workflows and version control for collaboration.",
+        "tags": {
+          "git": { "label": "Git" },
+          "github": { "label": "GitHub" },
+          "devops": { "label": "Microsoft DevOps" },
+          "scrumKanban": { "label": "Scrum / Kanban" }
+        }
+      }
+    }
+  },
+  "ContactMe": {
+    "tag": "Available for work",
+    "title": "Let's Build Something",
+    "accent": "extraordinary",
+    "description": "I'm currently open to freelance opportunities and full-time roles. Have a project in mind? Write me or connect on social media.",
+    "findMeOn": "Find me on",
+    "quickResponse": "Quick Response",
+    "responseTime": "I usually respond within 24 hours.",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "example@domain.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "consent": "I accept the <link>privacy policy</link> and consent to the processing of my data to receive a response.",
+    "success": {
+      "title": "Message Sent!",
+      "body": "Thank you for reaching out. I'll get back to you as soon as possible.",
+      "sendAnother": "Send another message"
+    },
+    "rateLimited": "Too many attempts. Please wait {seconds} before trying again.",
+    "error": {
+      "title": "Could not send the message.",
+      "body": "The email service is temporarily unavailable. You can contact me directly at <email>fernandezjos98@gmail.com</email> or via <linkedin>LinkedIn</linkedin>."
+    },
+    "submitting": "Sending…",
+    "submit": "Send Message",
+    "privacyNote": "Your data is secure. I never send spam."
+  },
+  "Validation": {
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Invalid email address.",
+    "nameMax": "Name must be at most 100 characters.",
+    "messageMin": "Message must be at least 10 characters.",
+    "messageMax": "Message must be at most 5000 characters.",
+    "htmlNotAllowed": "HTML content is not allowed.",
+    "consentRequired": "You must accept the privacy policy."
+  },
+  "WorkFlow": {
+    "tag": "Workflow",
+    "title": "Work",
+    "accent": "Methodologies",
+    "description": "My development process combines technical agility with strategic vision. Every line of code responds to a clear objective and constant improvement, ensuring scalable solutions.",
+    "agile": {
+      "title": "Agile & Scrum",
+      "badge": "Iterative",
+      "subtitle": "Applied in evolutionary maintenance and legacy system migration.",
+      "body": "Fast iterations and constant feedback to deliver value from week one. I use Scrum ceremonies to keep the team aligned and quickly adapt to market changes."
+    },
+    "objectives": {
+      "title": "Goal-Oriented",
+      "badge": "OKRs",
+      "body": "Focus on <primary>tangible results</primary>, not just writing code. Every feature aligns with defined objectives, with continuous tracking of impact on user experience and business efficiency."
+    },
+    "cicd": {
+      "title": "Continuous Improvement (CI/CD)",
+      "body": "Constant refactoring and automated deployment for robust software. Implementation of automated testing pipelines to ensure quality is never negotiable."
+    },
+    "team": {
+      "title": "Team Collaboration",
+      "body": "Cross-functional communication with technical and business teams, with task traceability and iterative deliveries. Quality software is born when development, product, and stakeholders work on shared objectives.",
+      "tools": [
+        { "iconKey": "teams", "label": "Microsoft Teams" },
+        { "iconKey": "azure", "label": "Azure DevOps" },
+        { "iconKey": "git", "label": "Git" },
+        { "iconKey": "scrum", "label": "Scrum / Kanban / Scrumban" },
+        { "iconKey": "okrs", "label": "OKRs" }
+      ]
+    }
+  },
+  "MyProjects": {
+    "tag": "Portfolio",
+    "title": "My",
+    "accent": "Projects",
+    "description": "A collection of web applications, tools, and experiments built with a focus on performance and user experience.",
+    "featured": "Featured Project",
+    "featuredBadge": "Featured",
+    "viewDemo": "View Demo",
+    "viewCode": "View Code",
+    "clickForDetails": "Click for details",
+    "moreOnGithub": "See more on GitHub",
+    "moreDescription": "Explore my other repositories and contributions.",
+    "modal": {
+      "closeAria": "Close modal",
+      "projectLabel": "Project",
+      "description": "Description",
+      "stack": "Tech Stack",
+      "features": "Key Features",
+      "featureList": ["Modern responsive interface", "Performance optimized", "Clean maintainable code"],
+      "liveDemo": "View Live Demo",
+      "sourceCode": "View Source Code"
+    },
+    "items": {
+      "ecommerce-dashboard": {
+        "title": "E-Commerce Dashboard",
+        "description": "A comprehensive platform for online store administrators. Enables real-time sales visualization, automated inventory management, and AI-driven predictive reports.",
+        "imageAlt": "Dashboard analytics mockup shown on a laptop screen with data charts"
+      },
+      "realtime-chat": {
+        "title": "Realtime Chat App",
+        "description": "Instant messaging system with support for channels, private messages and push notifications.",
+        "imageAlt": "Abstract linear interface of a chat application on mobile"
+      },
+      "taskflow-api": {
+        "title": "TaskFlow API",
+        "description": "Robust RESTful API for collaborative project management with JWT authentication and Swagger documentation.",
+        "imageAlt": "Minimalist task management interface with cards and lists"
+      },
+      "lumina-portfolio": {
+        "title": "Lumina Portfolio",
+        "description": "Minimalist portfolio for photographers with smooth page transitions and an optimized gallery.",
+        "imageAlt": "Artistic portfolio gallery layout with dark theme"
+      },
+      "crypto-tracker": {
+        "title": "Crypto Tracker",
+        "description": "Financial dashboard consuming cryptocurrency APIs to display price variations and alerts.",
+        "imageAlt": "Code editor screen showing crypto finance algorithm"
+      },
+      "booking-system": {
+        "title": "Booking System",
+        "description": "Reservation system for medical clinics with interactive calendar and email reminders.",
+        "imageAlt": "Clean minimal calendar and scheduling interface"
+      }
+    }
+  },
+  "ProfessionalCaseStudies": {
+    "tag": "Case Studies",
+    "title": "Professional",
+    "accent": "Case Studies",
+    "description": "Summary of real cases in enterprise contexts. Technical decisions, architecture approach, and results are shared while preserving client and product confidentiality.",
+    "labels": {
+      "context": "Context",
+      "challenge": "Challenge",
+      "approach": "Approach",
+      "impact": "Impact"
+    },
+    "ndaBadge": "NDA",
+    "items": {
+      "cs-peopleapps-maui-admin": {
+        "title": "Angular Admin for .NET MAUI Ecosystem",
+        "imageAlt": "Analytics dashboard and enterprise platform modernization",
+        "context": "Enterprise application with .NET MAUI mobile frontend requiring a web admin panel for operational management.",
+        "challenge": "Centralize critical administrative functions without disrupting existing operational flows.",
+        "approach": "Building an Angular admin module for notifications, users, and cross-system management with a modular and maintainable approach.",
+        "impact": "Greater operational traceability and improved administrative control over key ecosystem features."
+      },
+      "cs-createc-medical-platform": {
+        "title": "Medical Consultation and Exam Management Platform",
+        "imageAlt": "Medical system interface for managing consultations and exams",
+        "context": "Web application for managing medical consultations and various types of clinical exams in an enterprise environment.",
+        "challenge": "Design a functional and scalable foundation for operating clinical flows with a clear data structure.",
+        "approach": "Full-stack implementation with Laravel + Livewire, relational modeling in MySQL, migrations, Composer, and Eloquent ORM.",
+        "impact": "Technical standardization of the project and a solid foundation for the system's functional evolution."
+      },
+      "cs-peopleapps-ecommerce-maps": {
+        "title": "Multi-role E-commerce with Interactive Maps",
+        "imageAlt": "E-commerce interface with role-based segmentation and location",
+        "context": "E-commerce project with different operational profiles and geolocation visualization needs.",
+        "challenge": "Coordinate experience and permissions by role (admin, provider, customer) while maintaining functional consistency.",
+        "approach": "Developing Angular frontend modules by user type and integrating interactive maps to improve operational flows.",
+        "impact": "Better operational and navigation experience for users with different needs within the same platform."
+      },
+      "cs-peopleapps-legacy-modernization": {
+        "title": "Legacy System Migration to Modern Angular",
+        "imageAlt": "Analytics dashboard and enterprise platform modernization",
+        "context": "Core legacy system in Razor + JavaScript requiring progressive modernization without disrupting operations.",
+        "challenge": "Reduce technical debt and improve maintainability without halting functional business deliveries.",
+        "approach": "Incremental migration strategy to modern Angular applying Signals, OnPush Change Detection, Lazy Loading, and zoneless approach.",
+        "impact": "Greater frontend technical consistency and functional evolution with lower operational risk."
+      }
+    }
+  },
+  "DataCaseStudies": {
+    "stack": {
+      "angular": "Angular",
+      "composer": "Composer",
+      "dotnet-maui": ".NET MAUI",
+      "eloquent-orm": "Eloquent ORM",
+      "interactive-maps": "Interactive Maps",
+      "javascript": "JavaScript",
+      "laravel": "Laravel",
+      "lazy-loading": "Lazy Loading",
+      "livewire": "Livewire",
+      "mysql": "MySQL",
+      "notifications": "Notifications",
+      "onpush": "OnPush",
+      "operational-ux": "Operational UX",
+      "razor": "Razor",
+      "role-architecture": "Role-based Architecture",
+      "signals": "Signals",
+      "user-management": "User Management",
+      "zoneless": "Zoneless"
+    }
+  },
+  "ProfessionalExperience": {
+    "tag": "Experience",
+    "title": "Professional",
+    "accent": "Career",
+    "description": "Real experience in enterprise application development, combining evolutionary maintenance, legacy modernization, and greenfield solution design.",
+    "ndaAriaLabel": "Confidentiality notice",
+    "ndaTitle": "NDA Transparency",
+    "ndaBody": "Some client/project details remain confidential. During technical interviews I share approach, decisions, and impact.",
+    "items": {
+      "createc-1": {
+        "title": "Full Stack Developer",
+        "company": "Createc Solution S.A",
+        "period": "August 2023 - January 2024",
+        "summary": "Development of a web platform for managing medical consultations and various types of clinical exams, participating in technical design and architecture decisions.",
+        "bullets": [
+          "Implementation of functional modules for consultation and exam management.",
+          "Data structure and business flow design on MySQL.",
+          "Dependency management with Composer and migrations using Eloquent ORM."
+        ]
+      },
+      "peopleapps-2": {
+        "title": "Frontend Developer",
+        "company": "PeopleApps",
+        "period": "February 2024 - Present",
+        "summary": "Evolution of enterprise frontend applications in Angular and Razor, including legacy system maintenance and greenfield project definition.",
+        "bullets": [
+          "Architecture, patterns, stack, methodology and file system definition for new projects.",
+          "Technical team leadership during a period, driving development standards.",
+          "Frontend development for .NET MAUI applications and Angular admin panel for notifications, users and general operations.",
+          "Work on e-commerce project with role-based modules (admin, provider, customer) and interactive map integration.",
+          "Migration of core legacy system to modern Angular using Signals, OnPush, Lazy Loading and zoneless approach."
+        ]
+      }
+    }
+  },
+  "Certifications": {
+    "tag": "Credentials",
+    "title": "Certifications",
+    "accent": "& Achievements",
+    "description": "Validation of technical knowledge, modern frameworks, and agile methodologies.",
+    "viewCredential": "View Credential",
+    "downloadFullCv": "Download Full CV",
+    "filters": {
+      "all": "All",
+      "agile": "Agile",
+      "technical": "Technical",
+      "academic": "Academic"
+    },
+    "items": {
+      "product-owner": {
+        "title": "Product Owner",
+        "issuer": "Internal Certification",
+        "description": "Focused on product value definition, backlog prioritization, and alignment between business and technical teams.",
+        "tags": ["Product", "Backlog"]
+      },
+      "scrum-master": {
+        "title": "Scrum Master",
+        "issuer": "SCRUMstudy",
+        "description": "Certification focused on agile leadership, team facilitation, and continuous improvement in Scrum processes.",
+        "tags": ["Agile", "Leadership"]
+      },
+      "scrum-developer": {
+        "title": "Scrum Developer",
+        "issuer": "SCRUMstudy",
+        "description": "Practical Scrum approach for developers, integrating technical practices with backlog management.",
+        "tags": ["DevOps", "Teamwork"]
+      },
+      "angular-junior": {
+        "title": "Angular Junior",
+        "issuer": "Technical Certification",
+        "description": "Specialization in Frontend development using Angular, RxJS and TypeScript for robust SPA applications.",
+        "tags": ["Frontend", "TypeScript"]
+      },
+      "bachillerato-informatica-empresarial": {
+        "title": "Bachelor's Degree in Business Informatics",
+        "issuer": "University of Costa Rica",
+        "description": "University education focused on systems analysis, software development and application of information technologies in business environments.",
+        "tags": ["Academic", "Business IT"]
+      },
+      "scrum-fundamentals": {
+        "title": "Scrum Fundamentals",
+        "issuer": "SCRUMstudy",
+        "description": "Certification in the fundamental concepts of Scrum methodology, roles and key events for agile management.",
+        "tags": ["Agile", "Fundamentals"]
+      },
+      "tecnico-soporte": {
+        "title": "Technical High School Degree in IT Support",
+        "issuer": "CTP Umberto Melloni Campanini",
+        "description": "Technical specialization in IT support, maintenance, incident resolution and technology infrastructure fundamentals.",
+        "tags": ["Support", "Infrastructure"]
+      }
+    }
+  },
+  "LanguageToggle": {
+    "ariaLabel": "Switch language"
+  },
+  "Footer": {
+    "tagline": "Building scalable web solutions.",
+    "copyright": "© 2026 Josep Fernández Ortega. All rights reserved.",
+    "privacyLink": "Privacy Policy",
+    "termsLink": "Terms of Service",
+    "legalAriaLabel": "Legal links",
+    "scrollTop": "Scroll to Top"
+  },
+  "ThemeToggle": {
+    "ariaLabel": "Switch theme"
+  },
+  "LegalPrivacy": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "Privacy policy for Josep Fernández Ortega's site.",
+    "heading": "Privacy Policy",
+    "intro": "This site may collect basic contact information when the user sends a message through the form. The data is used solely to respond to professional inquiries.",
+    "section1Title": "Data collected",
+    "section1Body": "Name, email address, and message content voluntarily submitted by the user.",
+    "section2Title": "Use of information",
+    "section2Body": "The information is used exclusively for professional communication and request follow-up.",
+    "section3Title": "Data protection",
+    "section3Body": "Personal data is not sold or shared with third parties except as required by law.",
+    "section4Title": "Contact",
+    "section4Body": "For privacy-related inquiries, you can reach out through the contact channels available on this site."
+  },
+  "LegalTerms": {
+    "metaTitle": "Terms of Service",
+    "metaDescription": "Terms of service for Josep Fernández Ortega's site.",
+    "heading": "Terms of Service",
+    "intro": "By using this site, you accept these terms. The content is for informational and professional purposes.",
+    "section1Title": "Content use",
+    "section1Body": "Copying, redistributing, or reusing site content without prior authorization is not permitted.",
+    "section2Title": "Limitation of liability",
+    "section2Body": "Continuous site availability or total absence of technical errors is not guaranteed.",
+    "section3Title": "External links",
+    "section3Body": "This site may include links to third parties; the content of those sites is neither controlled nor guaranteed.",
+    "section4Title": "Modifications",
+    "section4Body": "These terms may be updated at any time to reflect functional or legal changes."
+  }
+}
