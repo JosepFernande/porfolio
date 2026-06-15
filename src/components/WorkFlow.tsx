@@ -10,16 +10,20 @@ import {
 } from "@mui/icons-material";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
+import { getTranslations } from "next-intl/server";
 
-export default function WorkFlow() {
+export default async function WorkFlow() {
+    const t = await getTranslations("WorkFlow");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const teamTools = (t.raw as any)("team.tools") as { label: string }[];
     return (
         <section aria-labelledby="workflow-title" className="flex-grow flex flex-col items-center">
             <div className=" w-full mb-16 ">
                 <SectionHeader
-                    tag="Workflow"
-                    title="Metodologías de"
-                    accent="Trabajo"
-                    description="Mi proceso de desarrollo combina agilidad técnica con visión estratégica. Cada línea de código responde a un objetivo claro y a una mejora constante, garantizando soluciones escalables."
+                    tag={t("tag")}
+                    title={t("title")}
+                    accent={t("accent")}
+                    description={t("description")}
                     titleId="workflow-title"
                 />
             </div>
@@ -35,16 +39,15 @@ export default function WorkFlow() {
                         <div className="bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl dark:hover:shadow-glow cursor-default transform hover:-translate-y-1">
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
-                                    Agile &amp; Scrum
+                                    {t("agile.title")}
                                 </h3>
-                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary uppercase tracking-wide">Iterativo</span>
+                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary uppercase tracking-wide">{t("agile.badge")}</span>
                             </div>
                             <p className="text-sm md:text-base font-medium text-primary mb-3">
-                                Aplicado en mantenimiento evolutivo y migración de sistemas legacy.
+                                {t("agile.subtitle")}
                             </p>
                             <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg leading-relaxed mb-6">
-                                Iteraciones rápidas y feedback constante para entregar valor desde la semana 1.
-                                Utilizo ceremonias Scrum para mantener al equipo alineado y adaptarnos rápidamente a los cambios del mercado.
+                                {t("agile.body")}
                             </p>
                             <div className="w-full h-40 bg-gray-50 dark:bg-black/30 rounded-xl overflow-hidden relative group-hover:scale-[1.01] transition-transform duration-500">
                                 <Image
@@ -72,12 +75,13 @@ export default function WorkFlow() {
                     <div className="pb-12 pt-1 group/item">
                         <div className="bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl dark:hover:shadow-glow cursor-default transform hover:-translate-y-1">
                             <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Orientación a Objetivos</h3>
-                                <span className="hidden md:inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 dark:bg-white/10 text-slate-500 dark:text-gray-300 uppercase tracking-wide group-hover/item:bg-primary/10 group-hover/item:text-primary transition-colors">OKRs</span>
+                                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t("objectives.title")}</h3>
+                                <span className="hidden md:inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 dark:bg-white/10 text-slate-500 dark:text-gray-300 uppercase tracking-wide group-hover/item:bg-primary/10 group-hover/item:text-primary transition-colors">{t("objectives.badge")}</span>
                             </div>
                             <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
-                                Enfoque en <span className="text-primary font-semibold">resultados tangibles</span>, no solo en escribir código.
-                                Cada feature se alinea a objetivos definidos, con seguimiento continuo del impacto en experiencia de usuario y eficiencia del negocio.
+                                {t.rich("objectives.body", {
+                                    primary: (chunks) => <span className="text-primary font-semibold">{chunks}</span>,
+                                })}
                             </p>
                         </div>
                     </div>
@@ -89,10 +93,9 @@ export default function WorkFlow() {
                     </div>
                     <div className="pb-12 pt-1 group/item3">
                         <div className="bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl dark:hover:shadow-glow cursor-default transform hover:-translate-y-1">
-                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Mejora Continua (CI/CD)</h3>
+                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{t("cicd.title")}</h3>
                             <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
-                                Refactorización constante y despliegue automatizado para un software robusto.
-                                Implementación de pipelines de testing automatizado para garantizar que la calidad nunca sea negociable.
+                                {t("cicd.body")}
                             </p>
                         </div>
                     </div>
@@ -104,29 +107,21 @@ export default function WorkFlow() {
                     </div>
                     <div className="pt-1 group/item4">
                         <div className="bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl dark:hover:shadow-glow cursor-default transform hover:-translate-y-1">
-                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Colaboración en Equipo</h3>
+                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{t("team.title")}</h3>
                             <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg leading-relaxed mb-6">
-                                Comunicación transversal con equipos técnicos y de negocio, con trazabilidad de tareas y entregas iterativas.
-                                El software de calidad nace cuando desarrollo, producto y stakeholders trabajan sobre objetivos compartidos.
+                                {t("team.body")}
                             </p>
                             <div className="flex flex-wrap gap-3">
-                                <div className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-3 py-2 rounded-lg border border-transparent hover:border-primary/30 hover:text-primary transition-colors">
-                                    <Groups2Outlined className="text-lg!" /> Microsoft Teams
+                                {teamTools.map((tool) => (
+                                <div key={tool.label} className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-3 py-2 rounded-lg border border-transparent hover:border-primary/30 hover:text-primary transition-colors">
+                                    {tool.label === "Microsoft Teams" || tool.label === "Microsoft Teams" ? <Groups2Outlined className="text-lg!" /> :
+                                     tool.label === "Azure DevOps" ? <AutoGraphOutlined className="text-lg!" /> :
+                                     tool.label === "Git" ? <><HubOutlined className="text-lg!" /><GitHub className="text-lg!" /></> :
+                                     tool.label === "Scrum / Kanban / Scrumban" ? <SyncOutlined className="text-lg!" /> :
+                                     tool.label === "OKRs" ? <RocketLaunchOutlined className="text-lg!" /> : null}
+                                    {tool.label}
                                 </div>
-                                <div className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-3 py-2 rounded-lg border border-transparent hover:border-primary/30 hover:text-primary transition-colors">
-                                    <AutoGraphOutlined className="text-lg!" /> Azure DevOps
-                                </div>
-                                <div className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-3 py-2 rounded-lg border border-transparent hover:border-primary/30 hover:text-primary transition-colors">
-                                    <HubOutlined className="text-lg!" />
-                                    Git
-                                    <GitHub className="text-lg!" />
-                                </div>
-                                <div className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-3 py-2 rounded-lg border border-transparent hover:border-primary/30 hover:text-primary transition-colors">
-                                    <SyncOutlined className="text-lg!" /> Scrum / Kanban / Scrumban
-                                </div>
-                                <div className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-3 py-2 rounded-lg border border-transparent hover:border-primary/30 hover:text-primary transition-colors">
-                                    <RocketLaunchOutlined className="text-lg!" /> OKRs
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>

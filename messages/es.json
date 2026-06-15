@@ -101,6 +101,38 @@
       }
     }
   },
+  "WorkFlow": {
+    "tag": "Workflow",
+    "title": "Metodologías de",
+    "accent": "Trabajo",
+    "description": "Mi proceso de desarrollo combina agilidad técnica con visión estratégica. Cada línea de código responde a un objetivo claro y a una mejora constante, garantizando soluciones escalables.",
+    "agile": {
+      "title": "Agile & Scrum",
+      "badge": "Iterativo",
+      "subtitle": "Aplicado en mantenimiento evolutivo y migración de sistemas legacy.",
+      "body": "Iteraciones rápidas y feedback constante para entregar valor desde la semana 1. Utilizo ceremonias Scrum para mantener al equipo alineado y adaptarnos rápidamente a los cambios del mercado."
+    },
+    "objectives": {
+      "title": "Orientación a Objetivos",
+      "badge": "OKRs",
+      "body": "Enfoque en <primary>resultados tangibles</primary>, no solo en escribir código. Cada feature se alinea a objetivos definidos, con seguimiento continuo del impacto en experiencia de usuario y eficiencia del negocio."
+    },
+    "cicd": {
+      "title": "Mejora Continua (CI/CD)",
+      "body": "Refactorización constante y despliegue automatizado para un software robusto. Implementación de pipelines de testing automatizado para garantizar que la calidad nunca sea negociable."
+    },
+    "team": {
+      "title": "Colaboración en Equipo",
+      "body": "Comunicación transversal con equipos técnicos y de negocio, con trazabilidad de tareas y entregas iterativas. El software de calidad nace cuando desarrollo, producto y stakeholders trabajan sobre objetivos compartidos.",
+      "tools": [
+        { "label": "Microsoft Teams" },
+        { "label": "Azure DevOps" },
+        { "label": "Git" },
+        { "label": "Scrum / Kanban / Scrumban" },
+        { "label": "OKRs" }
+      ]
+    }
+  },
   "MyProjects": {
     "tag": "Portfolio",
     "title": "Mis",

@@ -101,6 +101,38 @@
       }
     }
   },
+  "WorkFlow": {
+    "tag": "Workflow",
+    "title": "Work",
+    "accent": "Methodologies",
+    "description": "My development process combines technical agility with strategic vision. Every line of code responds to a clear objective and constant improvement, ensuring scalable solutions.",
+    "agile": {
+      "title": "Agile & Scrum",
+      "badge": "Iterative",
+      "subtitle": "Applied in evolutionary maintenance and legacy system migration.",
+      "body": "Fast iterations and constant feedback to deliver value from week one. I use Scrum ceremonies to keep the team aligned and quickly adapt to market changes."
+    },
+    "objectives": {
+      "title": "Goal-Oriented",
+      "badge": "OKRs",
+      "body": "Focus on <primary>tangible results</primary>, not just writing code. Every feature aligns with defined objectives, with continuous tracking of impact on user experience and business efficiency."
+    },
+    "cicd": {
+      "title": "Continuous Improvement (CI/CD)",
+      "body": "Constant refactoring and automated deployment for robust software. Implementation of automated testing pipelines to ensure quality is never negotiable."
+    },
+    "team": {
+      "title": "Team Collaboration",
+      "body": "Cross-functional communication with technical and business teams, with task traceability and iterative deliveries. Quality software is born when development, product, and stakeholders work on shared objectives.",
+      "tools": [
+        { "label": "Microsoft Teams" },
+        { "label": "Azure DevOps" },
+        { "label": "Git" },
+        { "label": "Scrum / Kanban / Scrumban" },
+        { "label": "OKRs" }
+      ]
+    }
+  },
   "MyProjects": {
     "tag": "Portfolio",
     "title": "My",
