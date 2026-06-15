@@ -11,11 +11,11 @@ import {
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import { getTranslations } from "next-intl/server";
+import { raw } from "@/lib/i18n-helpers";
 
 export default async function WorkFlow() {
     const t = await getTranslations("WorkFlow");
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const teamTools = (t.raw as any)("team.tools") as { label: string }[];
+    const teamTools = raw<{ label: string }[]>(t, "team.tools");
     return (
         <section aria-labelledby="workflow-title" className="flex-grow flex flex-col items-center">
             <div className=" w-full mb-16 ">

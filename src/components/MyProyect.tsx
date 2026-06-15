@@ -2,6 +2,7 @@
 import { ArrowOutwardOutlined, CodeOutlined, DesktopWindowsOutlined, StarOutline, VisibilityOutlined, AddOutlined, ShareOutlined, CheckCircleOutline, FolderOpenOutlined, CloseOutlined } from '@mui/icons-material';
 import { useState, type ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
+import { raw } from "@/lib/i18n-helpers";
 import SectionHeader from './SectionHeader';
 
 type TechTagVariant = 'regular' | 'badge';
@@ -312,8 +313,7 @@ const ProjectModal = ({ data, item, isOpen, onClose, t }: { data: ProjectData | 
 // Componente principal
 export default function MyProyect() {
     const t = useTranslations("MyProjects");
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const projectItems = (t.raw as any)("items") as ProjectItemsMap;
+    const projectItems = raw<ProjectItemsMap>(t, "items");
     const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 

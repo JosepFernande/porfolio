@@ -8,22 +8,19 @@ import {
 import { FileDownloadOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { raw } from "@/lib/i18n-helpers";
 import SectionHeader from "./SectionHeader";
 
 export default function Certification() {
   const t = useTranslations("Certifications");
   const [filter, setFilter] = useState<CertificationCategory>("all");
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const certItems = (t.raw as any)("items") as Record<
-    string,
-    {
-      title: string;
-      issuer: string;
-      description: string;
-      tags: string[];
-    }
-  >;
+  const certItems = raw<
+    Record<
+      string,
+      { title: string; issuer: string; description: string; tags: string[] }
+    >
+  >(t, "items");
 
   const filteredCertifications =
     filter === "all"

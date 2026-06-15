@@ -1,6 +1,7 @@
 import { LockOutlined, TrendingUpOutlined } from "@mui/icons-material";
 import SectionHeader from "./SectionHeader";
 import { getTranslations } from "next-intl/server";
+import { raw } from "@/lib/i18n-helpers";
 
 const CASE_STUDIES = [
   {
@@ -38,18 +39,19 @@ const CASE_STUDIES = [
 
 export default async function ProfessionalCaseStudies() {
   const t = await getTranslations("ProfessionalCaseStudies");
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const items = (t.raw as any)("items") as Record<
-    string,
-    {
-      title: string;
-      imageAlt: string;
-      context: string;
-      challenge: string;
-      approach: string;
-      impact: string;
-    }
-  >;
+  const items = raw<
+    Record<
+      string,
+      {
+        title: string;
+        imageAlt: string;
+        context: string;
+        challenge: string;
+        approach: string;
+        impact: string;
+      }
+    >
+  >(t, "items");
   return (
     <section
       aria-labelledby="case-studies-title"

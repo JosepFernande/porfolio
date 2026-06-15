@@ -1,6 +1,7 @@
 import { LockOutlined, TrendingUpOutlined } from "@mui/icons-material";
 import SectionHeader from "./SectionHeader";
 import { getTranslations } from "next-intl/server";
+import { raw } from "@/lib/i18n-helpers";
 
 const PROFESSIONAL_EXPERIENCES = [
   {
@@ -31,17 +32,18 @@ const PROFESSIONAL_EXPERIENCES = [
 
 export default async function ProfessionalExperience() {
   const t = await getTranslations("ProfessionalExperience");
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const items = (t.raw as any)("items") as Record<
-    string,
-    {
-      title: string;
-      company: string;
-      period: string;
-      summary: string;
-      bullets: string[];
-    }
-  >;
+  const items = raw<
+    Record<
+      string,
+      {
+        title: string;
+        company: string;
+        period: string;
+        summary: string;
+        bullets: string[];
+      }
+    >
+  >(t, "items");
   return (
     <section
       aria-labelledby="experiencia-title"

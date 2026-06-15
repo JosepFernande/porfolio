@@ -1,18 +1,20 @@
 import { TECHNICAL_SKILLS } from "@/const/technical-skills.data";
 import SectionHeader from "./SectionHeader";
 import { getTranslations } from "next-intl/server";
+import { raw } from "@/lib/i18n-helpers";
 
 export default async function TechnicalSkill() {
     const t = await getTranslations("TechnicalSkills");
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const items = (t.raw as any)("items") as Record<
-        string,
-        {
-            title: string;
-            description: string;
-            tags: Record<string, { label: string; level?: string }>;
-        }
-    >;
+    const items = raw<
+        Record<
+            string,
+            {
+                title: string;
+                description: string;
+                tags: Record<string, { label: string; level?: string }>;
+            }
+        >
+    >(t, "items");
     return (
         <section aria-labelledby="habilidades-title" className="max-w-300 mx-auto w-full flex flex-col gap-12 animate-fade-in-up">
             <SectionHeader
