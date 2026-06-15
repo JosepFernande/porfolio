@@ -365,5 +365,16 @@
   },
   "LanguageToggle": {
     "ariaLabel": "Switch language"
+  },
+  "Footer": {
+    "tagline": "Building scalable web solutions.",
+    "copyright": "© 2026 Josep Fernández Ortega. All rights reserved.",
+    "privacyLink": "Privacy Policy",
+    "termsLink": "Terms of Service",
+    "legalAriaLabel": "Legal links",
+    "scrollTop": "Scroll to Top"
+  },
+  "ThemeToggle": {
+    "ariaLabel": "Switch theme"
   }
 }

@@ -365,5 +365,16 @@
   },
   "LanguageToggle": {
     "ariaLabel": "Cambiar idioma"
+  },
+  "Footer": {
+    "tagline": "Construyendo soluciones web escalables.",
+    "copyright": "© 2026 Josep Fernández Ortega. Todos los derechos reservados.",
+    "privacyLink": "Política de Privacidad",
+    "termsLink": "Términos de Servicio",
+    "legalAriaLabel": "Enlaces legales",
+    "scrollTop": "Volver arriba"
+  },
+  "ThemeToggle": {
+    "ariaLabel": "Cambiar tema"
   }
 }
