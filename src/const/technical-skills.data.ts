@@ -7,17 +7,15 @@ import {
     StorageOutlined,
     TerminalOutlined,
 } from "@mui/icons-material";
-import { SvgIconComponent } from "@mui/icons-material";
+import type { SvgIconComponent } from "@mui/icons-material";
 
-interface SkillTag {
-    label: string;
-    level?: string;
+export interface SkillTag {
+    id: string;
     highlight?: boolean;
 }
 
-interface TechnicalSkillItem {
-    title: string;
-    description: string;
+export interface TechnicalSkillItem {
+    id: string;
     icon: SvgIconComponent;
     bgIcon: SvgIconComponent;
     tags: SkillTag[];
@@ -25,59 +23,51 @@ interface TechnicalSkillItem {
 
 export const TECHNICAL_SKILLS: TechnicalSkillItem[] = [
     {
-        title: "Frontend",
-        description:
-            "Creación de interfaces responsivas y dinámicas con enfoque en la experiencia de usuario.",
+        id: "frontend",
         icon: CodeOutlined,
         bgIcon: TerminalOutlined,
         tags: [
-            { label: "Angular", level: "Avanzado", highlight: true },
-            { label: "Signals" },
-            { label: "OnPush" },
-            { label: "Lazy Loading" },
-            { label: "Razor" },
-            { label: "JavaScript / TypeScript" },
+            { id: "angular", highlight: true },
+            { id: "signals" },
+            { id: "onpush" },
+            { id: "lazyLoading" },
+            { id: "razor" },
+            { id: "jsTs" },
         ],
     },
     {
-        title: "Backend",
-        description:
-            "Arquitectura robusta de servidores y gestión segura de datos.",
+        id: "backend",
         icon: SettingsEthernetOutlined,
         bgIcon: Dns,
         tags: [
-            { label: "NestJS", highlight: true },
-            { label: "Laravel" },
-            { label: "APIs REST" },
-            { label: "JWT + Guards" },
-            { label: "Arquitectura modular" },
+            { id: "nestjs", highlight: true },
+            { id: "laravel" },
+            { id: "apiRest" },
+            { id: "jwtGuards" },
+            { id: "modularArch" },
         ],
     },
     {
-        title: "Base de Datos",
-        description:
-            "Diseño y optimización de esquemas relacionales para integridad de datos.",
+        id: "database",
         icon: StorageOutlined,
         bgIcon: StorageOutlined,
         tags: [
-            { label: "MySQL" },
-            { label: "PostgreSQL" },
-            { label: "SQL Server" },
-            { label: "Prisma ORM" },
-            { label: "Eloquent ORM" },
+            { id: "mysql" },
+            { id: "postgresql" },
+            { id: "sqlServer" },
+            { id: "prismaOrm" },
+            { id: "eloquentOrm" },
         ],
     },
     {
-        title: "Herramientas",
-        description:
-            "Flujos de trabajo eficientes y control de versiones para colaboración.",
+        id: "tools",
         icon: BuildOutlined,
         bgIcon: IntegrationInstructionsOutlined,
         tags: [
-            { label: "Git" },
-            { label: "GitHub" },
-            { label: "Microsoft DevOps", highlight: true },
-            { label: "Scrum / Kanban" },
+            { id: "git" },
+            { id: "github" },
+            { id: "devops", highlight: true },
+            { id: "scrumKanban" },
         ],
     },
 ];

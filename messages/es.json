@@ -49,6 +49,58 @@
     "downloadCv": "Descargar CV",
     "viewProjects": "Ver Proyectos"
   },
+  "TechnicalSkills": {
+    "tag": "Expertise",
+    "title": "Habilidades",
+    "accent": "Técnicas",
+    "description": "Un conjunto de tecnologías modernas enfocadas en el rendimiento y la escalabilidad.",
+    "items": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "Creación de interfaces responsivas y dinámicas con enfoque en la experiencia de usuario.",
+        "tags": {
+          "angular": { "label": "Angular", "level": "Avanzado" },
+          "signals": { "label": "Signals" },
+          "onpush": { "label": "OnPush" },
+          "lazyLoading": { "label": "Lazy Loading" },
+          "razor": { "label": "Razor" },
+          "jsTs": { "label": "JavaScript / TypeScript" }
+        }
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Arquitectura robusta de servidores y gestión segura de datos.",
+        "tags": {
+          "nestjs": { "label": "NestJS" },
+          "laravel": { "label": "Laravel" },
+          "apiRest": { "label": "APIs REST" },
+          "jwtGuards": { "label": "JWT + Guards" },
+          "modularArch": { "label": "Arquitectura modular" }
+        }
+      },
+      "database": {
+        "title": "Base de Datos",
+        "description": "Diseño y optimización de esquemas relacionales para integridad de datos.",
+        "tags": {
+          "mysql": { "label": "MySQL" },
+          "postgresql": { "label": "PostgreSQL" },
+          "sqlServer": { "label": "SQL Server" },
+          "prismaOrm": { "label": "Prisma ORM" },
+          "eloquentOrm": { "label": "Eloquent ORM" }
+        }
+      },
+      "tools": {
+        "title": "Herramientas",
+        "description": "Flujos de trabajo eficientes y control de versiones para colaboración.",
+        "tags": {
+          "git": { "label": "Git" },
+          "github": { "label": "GitHub" },
+          "devops": { "label": "Microsoft DevOps" },
+          "scrumKanban": { "label": "Scrum / Kanban" }
+        }
+      }
+    }
+  },
   "LanguageToggle": {
     "ariaLabel": "Cambiar idioma"
   }

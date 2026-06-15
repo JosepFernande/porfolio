@@ -49,6 +49,58 @@
     "downloadCv": "Download CV",
     "viewProjects": "View Projects"
   },
+  "TechnicalSkills": {
+    "tag": "Expertise",
+    "title": "Technical",
+    "accent": "Skills",
+    "description": "A modern technology stack focused on performance and scalability.",
+    "items": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "Building responsive and dynamic interfaces with a focus on user experience.",
+        "tags": {
+          "angular": { "label": "Angular", "level": "Advanced" },
+          "signals": { "label": "Signals" },
+          "onpush": { "label": "OnPush" },
+          "lazyLoading": { "label": "Lazy Loading" },
+          "razor": { "label": "Razor" },
+          "jsTs": { "label": "JavaScript / TypeScript" }
+        }
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Robust server architecture and secure data management.",
+        "tags": {
+          "nestjs": { "label": "NestJS" },
+          "laravel": { "label": "Laravel" },
+          "apiRest": { "label": "REST APIs" },
+          "jwtGuards": { "label": "JWT + Guards" },
+          "modularArch": { "label": "Modular Architecture" }
+        }
+      },
+      "database": {
+        "title": "Database",
+        "description": "Design and optimization of relational schemas for data integrity.",
+        "tags": {
+          "mysql": { "label": "MySQL" },
+          "postgresql": { "label": "PostgreSQL" },
+          "sqlServer": { "label": "SQL Server" },
+          "prismaOrm": { "label": "Prisma ORM" },
+          "eloquentOrm": { "label": "Eloquent ORM" }
+        }
+      },
+      "tools": {
+        "title": "Tools",
+        "description": "Efficient workflows and version control for collaboration.",
+        "tags": {
+          "git": { "label": "Git" },
+          "github": { "label": "GitHub" },
+          "devops": { "label": "Microsoft DevOps" },
+          "scrumKanban": { "label": "Scrum / Kanban" }
+        }
+      }
+    }
+  },
   "LanguageToggle": {
     "ariaLabel": "Switch language"
   }
