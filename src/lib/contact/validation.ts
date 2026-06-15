@@ -35,21 +35,21 @@ export function createContactSchema(t: (key: string) => string) {
   return z.object({
     name: z
       .string()
-      .max(100, { message: t("Validation.nameMax") })
+      .max(100, { message: t("nameMax") })
       .optional(),
     email: z
       .string()
-      .min(1, { message: t("Validation.emailRequired") })
-      .email({ message: t("Validation.emailInvalid") }),
+      .min(1, { message: t("emailRequired") })
+      .email({ message: t("emailInvalid") }),
     message: z
       .string()
-      .min(10, { message: t("Validation.messageMin") })
-      .max(5000, { message: t("Validation.messageMax") })
+      .min(10, { message: t("messageMin") })
+      .max(5000, { message: t("messageMax") })
       .refine((msg) => !HTML_INJECTION_RE.test(msg), {
-        message: t("Validation.htmlNotAllowed"),
+        message: t("htmlNotAllowed"),
       }),
     consent: z.literal(true, {
-      errorMap: () => ({ message: t("Validation.consentRequired") }),
+      errorMap: () => ({ message: t("consentRequired") }),
     }),
     honeypot: z.string().optional(),
   });
