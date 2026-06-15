@@ -2,7 +2,7 @@ import "./globals.css";
 import { Manrope } from "next/font/google";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getLocale, setRequestLocale } from "next-intl/server";
+import { getMessages, getLocale, getTranslations, setRequestLocale } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
@@ -12,50 +12,43 @@ const manrope = Manrope({
   variable: "--font-display",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://josepfernandez.dev"),
-  title: {
-    default: "Josep Fernández Ortega | Full Stack Developer",
-    template: "%s | Josep Fernández Ortega",
-  },
-  description:
-    "Portfolio profesional de Josep Fernández Ortega. Desarrollo soluciones web escalables con foco en arquitectura, rendimiento y experiencia de usuario.",
-  keywords: [
-    "Josep Fernández Ortega",
-    "Full Stack Developer",
-    "Portfolio",
-    "Next.js",
-    "React",
-    "Node.js",
-    "TypeScript",
-    "Arquitectura de Software",
-  ],
-  authors: [{ name: "Josep Fernández Ortega" }],
-  creator: "Josep Fernández Ortega",
-  publisher: "Josep Fernández Ortega",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    type: "website",
-    locale: "es_ES",
-    url: "https://josepfernandez.dev",
-    siteName: "Josep Fernández Ortega Portfolio",
-    title: "Josep Fernández Ortega | Full Stack Developer",
-    description:
-      "Portfolio profesional de Josep Fernández Ortega. Desarrollo soluciones web escalables con foco en arquitectura, rendimiento y experiencia de usuario.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Josep Fernández Ortega | Full Stack Developer",
-    description:
-      "Portfolio profesional de Josep Fernández Ortega. Desarrollo soluciones web escalables con foco en arquitectura, rendimiento y experiencia de usuario.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Layout.metadata");
+  const locale = await getLocale();
+
+  return {
+    metadataBase: new URL("https://josepfernandez.dev"),
+    title: {
+      default: t("title"),
+      template: t("titleTemplate"),
+    },
+    description: t("description"),
+    keywords: t.raw("keywords") as string[],
+    authors: [{ name: "Josep Fernández Ortega" }],
+    creator: "Josep Fernández Ortega",
+    publisher: "Josep Fernández Ortega",
+    alternates: {
+      canonical: "/",
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "es" ? "es_ES" : "en_US",
+      url: "https://josepfernandez.dev",
+      siteName: "Josep Fernández Ortega Portfolio",
+      title: t("title"),
+      description: t("description"),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
