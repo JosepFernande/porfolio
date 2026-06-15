@@ -101,6 +101,61 @@
       }
     }
   },
+  "MyProjects": {
+    "tag": "Portfolio",
+    "title": "Mis",
+    "accent": "Proyectos",
+    "description": "Una colección de aplicaciones web, herramientas y experimentos diseñados con enfoque en rendimiento y experiencia de usuario.",
+    "featured": "Proyecto Destacado",
+    "featuredBadge": "Destacado",
+    "viewDemo": "Ver Demo",
+    "viewCode": "Ver Código",
+    "clickForDetails": "Click para detalles",
+    "moreOnGithub": "Ver más en GitHub",
+    "moreDescription": "Explora mis otros repositorios y contribuciones.",
+    "modal": {
+      "closeAria": "Cerrar modal",
+      "projectLabel": "Proyecto",
+      "description": "Descripción",
+      "stack": "Stack Tecnológico",
+      "features": "Características Principales",
+      "featureList": ["Interfaz moderna y responsiva", "Optimizado para rendimiento", "Código limpio y mantenible"],
+      "liveDemo": "Ver Demo en Vivo",
+      "sourceCode": "Ver Código Fuente"
+    },
+    "items": {
+      "ecommerce-dashboard": {
+        "title": "E-Commerce Dashboard",
+        "description": "Una plataforma integral para administradores de tiendas online. Permite visualización de ventas en tiempo real, gestión de inventario automatizada y reportes predictivos basados en IA.",
+        "imageAlt": "Dashboard analytics mockup shown on a laptop screen with data charts"
+      },
+      "realtime-chat": {
+        "title": "Realtime Chat App",
+        "description": "Sistema de mensajería instantánea con soporte para canales, mensajes privados y notificaciones push.",
+        "imageAlt": "Abstract linear interface of a chat application on mobile"
+      },
+      "taskflow-api": {
+        "title": "TaskFlow API",
+        "description": "API RESTful robusta para gestión de proyectos colaborativos con autenticación JWT y documentación Swagger.",
+        "imageAlt": "Minimalist task management interface with cards and lists"
+      },
+      "lumina-portfolio": {
+        "title": "Lumina Portfolio",
+        "description": "Portafolio minimalista para fotógrafos con transiciones de página fluidas y galería optimizada.",
+        "imageAlt": "Artistic portfolio gallery layout with dark theme"
+      },
+      "crypto-tracker": {
+        "title": "Crypto Tracker",
+        "description": "Dashboard financiero que consume APIs de criptomonedas para mostrar variaciones de precio y alertas.",
+        "imageAlt": "Code editor screen showing crypto finance algorithm"
+      },
+      "booking-system": {
+        "title": "Booking System",
+        "description": "Sistema de reservas para clínicas médicas con calendario interactivo y recordatorios por email.",
+        "imageAlt": "Clean minimal calendar and scheduling interface"
+      }
+    }
+  },
   "ProfessionalCaseStudies": {
     "tag": "Case Studies",
     "title": "Caso de Estudios",
