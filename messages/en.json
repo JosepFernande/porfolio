@@ -10,7 +10,12 @@
       "contacto": "Contact"
     },
     "ariaLabel": "Main navigation",
-    "downloadCv": "Download CV"
+    "downloadCv": "Download CV",
+    "menu": {
+      "toggle": "Open menu",
+      "close": "Close menu",
+      "open": "Menu"
+    }
   },
   "Layout": {
     "metadata": {
