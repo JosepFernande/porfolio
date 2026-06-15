@@ -101,6 +101,52 @@
       }
     }
   },
+  "ProfessionalCaseStudies": {
+    "tag": "Case Studies",
+    "title": "Caso de Estudios",
+    "accent": "Profesionales",
+    "description": "Resumen de casos reales en contexto empresarial. Se comparten decisiones técnicas, enfoque de arquitectura y resultados, preservando confidencialidad de cliente y producto.",
+    "labels": {
+      "context": "Contexto",
+      "challenge": "Desafío",
+      "approach": "Enfoque",
+      "impact": "Impacto"
+    },
+    "items": {
+      "cs-peopleapps-maui-admin": {
+        "title": "Administrador Angular para Ecosistema .NET MAUI",
+        "imageAlt": "Panel de analítica y modernización de plataforma empresarial",
+        "context": "Aplicación empresarial con frontend móvil en .NET MAUI y necesidad de panel administrativo web para gestión operativa.",
+        "challenge": "Centralizar funciones administrativas críticas sin afectar flujos existentes de operación.",
+        "approach": "Construcción de módulo administrador en Angular para notificaciones, usuarios y gestión transversal del sistema, con enfoque modular y mantenible.",
+        "impact": "Mayor trazabilidad operativa y mejor control administrativo sobre funcionalidades clave del ecosistema."
+      },
+      "cs-createc-medical-platform": {
+        "title": "Plataforma de Gestión de Consultas y Exámenes Médicos",
+        "imageAlt": "Interfaz de sistema médico para gestión de consultas y exámenes",
+        "context": "Aplicación web para gestión de consultas médicas y diferentes tipos de exámenes clínicos en entorno empresarial.",
+        "challenge": "Diseñar una base funcional y escalable para operar flujos clínicos con estructura clara de datos.",
+        "approach": "Implementación full stack con Laravel + Livewire, modelado relacional en MySQL, migraciones, Composer y Eloquent ORM.",
+        "impact": "Estandarización técnica del proyecto y base sólida para evolución funcional del sistema."
+      },
+      "cs-peopleapps-ecommerce-maps": {
+        "title": "E-commerce Multirol con Mapas Interactivos",
+        "imageAlt": "Interfaz e-commerce con segmentación por rol y ubicación",
+        "context": "Proyecto e-commerce con distintos perfiles de operación y necesidades de visualización geográfica.",
+        "challenge": "Coordinar experiencia y permisos por rol (administrador, proveedor, cliente) manteniendo consistencia funcional.",
+        "approach": "Desarrollo de módulos frontend en Angular por tipo de usuario e integración de mapas interactivos para mejorar flujos de operación.",
+        "impact": "Mejor experiencia operativa y de navegación para usuarios con necesidades diferentes dentro de la misma plataforma."
+      },
+      "cs-peopleapps-legacy-modernization": {
+        "title": "Migración de Sistema Legacy a Angular Moderno",
+        "imageAlt": "Panel de analítica y modernización de plataforma empresarial",
+        "context": "Sistema core legado en Razor + JavaScript con necesidad de modernización progresiva sin interrumpir operación.",
+        "challenge": "Reducir deuda técnica y mejorar mantenibilidad sin frenar entregas funcionales del negocio.",
+        "approach": "Estrategia incremental de migración a Angular moderno aplicando Signals, Change Detection OnPush, Lazy Loading y enfoque zoneless.",
+        "impact": "Mayor consistencia técnica del frontend y evolución funcional con menor riesgo operativo."
+      }
+    }
+  },
   "ProfessionalExperience": {
     "tag": "Experiencia",
     "title": "Trayectoria",
