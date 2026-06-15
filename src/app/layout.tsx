@@ -6,6 +6,7 @@ import { getMessages, getLocale, getTranslations, setRequestLocale } from "next-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -80,6 +81,7 @@ export default async function RootLayout({
       <body
         className={`${manrope.variable} bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-(--font-display) transition-colors duration-300`}
       >
+        <Analytics />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Navbar />
           {children}
