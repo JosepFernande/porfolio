@@ -376,5 +376,33 @@
   },
   "ThemeToggle": {
     "ariaLabel": "Cambiar tema"
+  },
+  "LegalPrivacy": {
+    "metaTitle": "Política de Privacidad",
+    "metaDescription": "Política de privacidad del sitio de Josep Fernández Ortega.",
+    "heading": "Política de Privacidad",
+    "intro": "Este sitio puede recopilar información básica de contacto cuando el usuario envía un mensaje a través del formulario. Los datos se utilizan únicamente para responder consultas profesionales.",
+    "section1Title": "Datos recopilados",
+    "section1Body": "Nombre, correo electrónico y contenido del mensaje enviado voluntariamente por el usuario.",
+    "section2Title": "Uso de la información",
+    "section2Body": "La información se utiliza exclusivamente para comunicación profesional y seguimiento de solicitudes.",
+    "section3Title": "Protección de datos",
+    "section3Body": "No se comercializan datos personales ni se comparten con terceros salvo obligación legal.",
+    "section4Title": "Contacto",
+    "section4Body": "Para consultas relacionadas con privacidad, podés escribir mediante los canales de contacto disponibles en este sitio."
+  },
+  "LegalTerms": {
+    "metaTitle": "Términos de Servicio",
+    "metaDescription": "Términos de servicio del sitio de Josep Fernández Ortega.",
+    "heading": "Términos de Servicio",
+    "intro": "Al utilizar este sitio, aceptás estos términos. El contenido tiene fines informativos y profesionales.",
+    "section1Title": "Uso del contenido",
+    "section1Body": "No está permitido copiar, redistribuir o reutilizar contenido del sitio sin autorización previa.",
+    "section2Title": "Limitación de responsabilidad",
+    "section2Body": "No se garantiza disponibilidad continua del sitio ni ausencia total de errores técnicos.",
+    "section3Title": "Enlaces externos",
+    "section3Body": "Este sitio puede incluir enlaces a terceros; no se controla ni garantiza el contenido de esos sitios.",
+    "section4Title": "Modificaciones",
+    "section4Body": "Estos términos pueden actualizarse en cualquier momento para reflejar cambios funcionales o legales."
   }
 }

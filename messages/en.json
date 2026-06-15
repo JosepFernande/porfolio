@@ -376,5 +376,33 @@
   },
   "ThemeToggle": {
     "ariaLabel": "Switch theme"
+  },
+  "LegalPrivacy": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "Privacy policy for Josep Fernández Ortega's site.",
+    "heading": "Privacy Policy",
+    "intro": "This site may collect basic contact information when the user sends a message through the form. The data is used solely to respond to professional inquiries.",
+    "section1Title": "Data collected",
+    "section1Body": "Name, email address, and message content voluntarily submitted by the user.",
+    "section2Title": "Use of information",
+    "section2Body": "The information is used exclusively for professional communication and request follow-up.",
+    "section3Title": "Data protection",
+    "section3Body": "Personal data is not sold or shared with third parties except as required by law.",
+    "section4Title": "Contact",
+    "section4Body": "For privacy-related inquiries, you can reach out through the contact channels available on this site."
+  },
+  "LegalTerms": {
+    "metaTitle": "Terms of Service",
+    "metaDescription": "Terms of service for Josep Fernández Ortega's site.",
+    "heading": "Terms of Service",
+    "intro": "By using this site, you accept these terms. The content is for informational and professional purposes.",
+    "section1Title": "Content use",
+    "section1Body": "Copying, redistributing, or reusing site content without prior authorization is not permitted.",
+    "section2Title": "Limitation of liability",
+    "section2Body": "Continuous site availability or total absence of technical errors is not guaranteed.",
+    "section3Title": "External links",
+    "section3Body": "This site may include links to third parties; the content of those sites is neither controlled nor guaranteed.",
+    "section4Title": "Modifications",
+    "section4Body": "These terms may be updated at any time to reflect functional or legal changes."
   }
 }
